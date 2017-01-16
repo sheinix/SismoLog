@@ -11,7 +11,6 @@ import Foundation
 enum TableSections : Int {
     
         case Magnitude
-        case Depth
         case PickerFilter
         case Buttons
         case total
@@ -21,9 +20,7 @@ enum TableSections : Int {
         case .Magnitude:
             return "Magnitud"
         case .PickerFilter:
-            return "   Cantidad |   Mes  |  Anio"
-        case .Depth:
-            return "Profundidad"
+            return " Cantidad    |    Mes     |  Anio"
         case .Buttons:
             return ""
         default:
@@ -38,12 +35,12 @@ enum TableSections : Int {
         var filterView = UIView()
         
         switch self {
-            case .Magnitude, .Depth:
+            case .Magnitude:
                 filterView = getSlider()
-        case .PickerFilter:
+            case .PickerFilter:
                 filterView = getNumberPicker()
-        case .Buttons:
-            filterView = getButtonView()
+            case .Buttons:
+                filterView = getButtonView()
         default:
             break
         }
@@ -56,23 +53,21 @@ enum TableSections : Int {
         
         //Siempre una row por section por ahora
         switch self {
-        case .Magnitude, .PickerFilter, .Depth, .Buttons:
-            return 1
-        default:
-            break
+            case .Magnitude, .PickerFilter, .Buttons: return 1
+            
+            default: break
         }
         
         return 1
     }
     
     public var height : CGFloat! {
+       
         switch self {
-        case .Magnitude, .Depth:
-            return 80
-        case .Buttons:
-            return 60
-        default:
-            break
+        case .Magnitude: return 80
+        case .Buttons:   return 60
+        default:         break
+        
         }
         return 214
     }
@@ -83,9 +78,7 @@ enum TableSections : Int {
         slider.isContinuous = true
         
         switch self {
-        case .Depth:
-            slider.maximumValue = 10
-            slider.minimumValue = 1
+
         case .Magnitude:
             slider.maximumValue = NumberConstants.maxMinimumMagnitude
             slider.minimumValue = 1
@@ -99,7 +92,7 @@ enum TableSections : Int {
     
     fileprivate func getNumberPicker() -> UIPickerView {
         let picker = UIPickerView()
-        picker.tintColor = UIColor.red
+        picker.tintColor =  Colors.mainColor
         
         return picker
     }
@@ -107,7 +100,7 @@ enum TableSections : Int {
     fileprivate func getButtonView() -> UIButton {
         
         let button = UIButton(type: .custom)
-        button.backgroundColor = UIColor.red
+        button.backgroundColor = Colors.mainColor
         button.layer.cornerRadius = 9
         button.setTitleColor(UIColor.white, for: .normal)
         button.setTitle("Aplicar", for: .normal)

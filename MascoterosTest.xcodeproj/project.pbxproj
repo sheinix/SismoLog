@@ -28,6 +28,8 @@
 		269487981E2B12CE0047BC75 /* PickerSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487971E2B12CE0047BC75 /* PickerSource.swift */; };
 		2694879F1E2C43A90047BC75 /* MapMarkerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694879E1E2C43A90047BC75 /* MapMarkerManager.swift */; };
 		269487A11E2C51A30047BC75 /* EarthquakeSeverity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487A01E2C51A30047BC75 /* EarthquakeSeverity.swift */; };
+		269487A31E2C83CF0047BC75 /* TableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487A21E2C83CF0047BC75 /* TableSectionHeaderView.swift */; };
+		269487A51E2C85E60047BC75 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487A41E2C85E60047BC75 /* HeaderView.swift */; };
 		D33634A5DA4FD7FAA82402C3 /* Pods_MascoterosTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D328996215E0B5ECA8B794B7 /* Pods_MascoterosTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		269487971E2B12CE0047BC75 /* PickerSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSource.swift; sourceTree = "<group>"; };
 		2694879E1E2C43A90047BC75 /* MapMarkerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapMarkerManager.swift; sourceTree = "<group>"; };
 		269487A01E2C51A30047BC75 /* EarthquakeSeverity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthquakeSeverity.swift; sourceTree = "<group>"; };
+		269487A21E2C83CF0047BC75 /* TableSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderView.swift; sourceTree = "<group>"; };
+		269487A41E2C85E60047BC75 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		47634C8D0D42BA920D31A2E3 /* Pods-MascoterosTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MascoterosTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-MascoterosTest/Pods-MascoterosTest.release.xcconfig"; sourceTree = "<group>"; };
 		C0C2599F0F17F620AF3F3469 /* Pods-MascoterosTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MascoterosTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MascoterosTest/Pods-MascoterosTest.debug.xcconfig"; sourceTree = "<group>"; };
 		D328996215E0B5ECA8B794B7 /* Pods_MascoterosTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MascoterosTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +184,8 @@
 		269487901E2AFA0E0047BC75 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				269487A41E2C85E60047BC75 /* HeaderView.swift */,
+				269487A21E2C83CF0047BC75 /* TableSectionHeaderView.swift */,
 				269487911E2AFA2D0047BC75 /* TableHeaderView.swift */,
 				269487931E2AFA570047BC75 /* FiltersTableViewCell.swift */,
 			);
@@ -326,6 +332,7 @@
 				2694877C1E29C47E0047BC75 /* FilterTableViewController.swift in Sources */,
 				2694878D1E29FD7E0047BC75 /* Parameters.swift in Sources */,
 				2694877A1E29BB180047BC75 /* MapViewController.swift in Sources */,
+				269487A31E2C83CF0047BC75 /* TableSectionHeaderView.swift in Sources */,
 				269487851E29D11E0047BC75 /* EartquakeProtocol.swift in Sources */,
 				2694878A1E29E8B30047BC75 /* Router.swift in Sources */,
 				269487871E29D35D0047BC75 /* EartquakeService.swift in Sources */,
@@ -333,6 +340,7 @@
 				2694877E1E29C4F20047BC75 /* MapFilter.swift in Sources */,
 				269487831E29CFE10047BC75 /* Earthquake.swift in Sources */,
 				269487981E2B12CE0047BC75 /* PickerSource.swift in Sources */,
+				269487A51E2C85E60047BC75 /* HeaderView.swift in Sources */,
 				2621400A1E29AF7A007352E3 /* NetworkProtocol.swift in Sources */,
 				262140071E29AF01007352E3 /* NetworkManager.swift in Sources */,
 				26213FF31E29AC07007352E3 /* AppDelegate.swift in Sources */,

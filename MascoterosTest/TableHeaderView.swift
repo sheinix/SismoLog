@@ -9,28 +9,32 @@
 import UIKit
 import SnapKit
 
-class TableHeaderView: UIView {
+class TableHeaderView: HeaderView {
 
-    var titleLabel : UILabel = {
+    var closeButton : UIButton = {
         
-        let title = UILabel()
-        title.textColor = UIColor.white
-        title.textAlignment = .center
-        title.font = UIFont.systemFont(ofSize: 25)
-        title.text = "Filtrar Terremotos"
-        return title
-        
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named:"filter"), for: .normal)
+        return button
     }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = UIColor.red
+        self.backgroundColor = Colors.mainColor
+        self.titleLabel.textColor = .white
+        self.titleLabel.font = UIFont.systemFont(ofSize: 25)
+        self.titleLabel.text = "Filtrar Terremotos"
         
-        addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
+        
+        addSubview(closeButton)
+        closeButton.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-10)
+            make.top.equalToSuperview().offset(20)
+            make.width.equalTo(50)
+            make.height.equalTo(50)
+
         }
         
     }

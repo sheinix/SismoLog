@@ -38,8 +38,8 @@ class MapMarkerManager {
     
     public func markerFor(earthQuake: Eartquake, in map: GMSMapView) -> GMSMarker {
         
-        let marker = markerFor(latitude: Double(earthQuake.latitude)!,
-                               longitude: Double(earthQuake.longitude)!,
+        let marker = markerFor(latitude: Double(earthQuake.latitude!)!,
+                               longitude: Double(earthQuake.longitude!)!,
                                map: map)
         
       
@@ -47,7 +47,10 @@ class MapMarkerManager {
     
         marker.title = earthQuake.region
         
-        marker.snippet = "Magnitud : " + String(earthQuake.magnitude)
+        if let magnitude = earthQuake.magnitude {
+            
+            marker.snippet = "Magnitud : " + String(magnitude)
+        }
         
         return marker
         

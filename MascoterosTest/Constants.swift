@@ -40,10 +40,17 @@ public struct NotificationIds {
     static let newData = "newDataId"
 }
 
+struct Colors {
+     static let mainColor = UIColor(red: 226/255, green: 100/255, blue: 95/255, alpha: 0.9)
+        
+    
+}
+
 struct NumberConstants {
     
     static let maxEarthquakes = 900
     static let maxMinimumMagnitude : Float = 8.0
+    static let tableSectionHeadersHeight : CGFloat = 60.0
 }
 
 enum Months : Int {

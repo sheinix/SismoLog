@@ -23,8 +23,8 @@ class FiltersTableViewCell: UITableViewCell {
     var numberIndicator : UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.textColor = UIColor.red
-        label.font = UIFont.boldSystemFont(ofSize: 10)
+        label.textColor = Colors.mainColor
+        label.font = UIFont.boldSystemFont(ofSize: 17)
         label.isHidden = true
         return label
     }()
@@ -44,7 +44,7 @@ class FiltersTableViewCell: UITableViewCell {
         self.tag = section.rawValue
         
         switch section {
-        case .Depth, .Magnitude:
+        case .Magnitude:
             setupSlider(slider: section.filter as! UISlider)
         case .PickerFilter:
             setupPicker(picker: section.filter as! UIPickerView)
@@ -61,7 +61,7 @@ class FiltersTableViewCell: UITableViewCell {
         numberIndicator.isHidden = false
         numberIndicator.text = String(slider.value)
         
-        slider.tintColor = UIColor.red
+        slider.tintColor = Colors.mainColor
         slider.addTarget(self, action: #selector(sliderDidChange), for: .valueChanged)
         
         addSubview(numberIndicator)
