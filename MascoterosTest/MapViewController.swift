@@ -15,7 +15,7 @@ class MapViewController: UIViewController {
     
     var filterButton = UIButton(type: .custom)
     let locationManager = CLLocationManager()
-    
+    var earthquakes : [Eartquake]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +26,27 @@ class MapViewController: UIViewController {
         
         setupViewElements()
         
-        NetworkManager.shared.getRecentEartquakes()
+        NotificationCenter.default.addObserver(self,
+                                            selector:#selector(earthquakesListHasNewData),
+                                                name: NSNotification.Name(rawValue: NotificationIds.newData),
+                                              object: nil)
+        
+        firstLaunch()
+        
     }
 
-    
+    fileprivate func firstLaunch() {
+        
+        guard UserDefaults.standard.bool(forKey: UserDefaultsKeys.didAskForRecentsKeys) else {
+            
+            NetworkManager.shared.getRecentEartquakes()
+            
+          //  UserDefaults.standard.set(true, forKey: UserDefaultsKeys.didAskForRecentsKeys)
+           // UserDefaults.standard.synchronize()
+            
+            return
+        }
+    }
     
     fileprivate func setupViewElements() {
         
@@ -56,6 +73,14 @@ class MapViewController: UIViewController {
         filterViewController.filterDelegate = self
             
         self.present(filterViewController, animated: true) { }
+    }
+    
+    @objc func earthquakesListHasNewData(notification: NSNotification) {
+        
+        let list = notification.userInfo?["earthquakes"] as! [Eartquake]
+        
+        MapMarkerManager.shared.addMarkersFor(earthquakes: list, to: mapView)
+        
     }
 }
 
@@ -84,8 +109,17 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
        
         if let location = locations.first {
-            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 6, bearing: 0, viewingAngle: 0)
             locationManager.stopUpdatingLocation()
+
+            _ = MapMarkerManager.shared.markerFor(latitude: location.coordinate.latitude,
+                                                  longitude: location.coordinate.longitude,
+                                                        map: mapView)
+            
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        
     }
 }

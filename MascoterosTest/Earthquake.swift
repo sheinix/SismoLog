@@ -12,7 +12,11 @@ import ObjectMapper
 public class Eartquake : Mappable {
     
     var earthQuakeId : String
-    var magnitude : Double
+    var magnitude : Double {
+        didSet {
+            severity = EearthquakeSeverity(magnitude: magnitude)
+        }
+    }
     var depth : Double
     //var position : EarthquakeCoordinate?
     var latitude : String
@@ -22,7 +26,9 @@ public class Eartquake : Mappable {
     var timedate : String
     var year : Int?
     var month : Int?
-
+    var severity : EearthquakeSeverity?
+    
+    
     required public init(magnitude : Double, depth : Double , timedate : String, src : String, region: String, latitude: String, longitude: String, earthquakeId : String) {
         
         self.earthQuakeId = earthquakeId
@@ -33,7 +39,7 @@ public class Eartquake : Mappable {
         self.region       = region
         self.src          = src
         self.timedate     = timedate
-        
+        //self.severity = EearthquakeSeverity(magnitude: Double(self.magnitude))
         
         //TODO get year month
     }
@@ -56,6 +62,7 @@ public class Eartquake : Mappable {
         timedate      <- map["timedate"]
         latitude      <- map["lat"]
         longitude     <- map["lon"]
+        
         
         //position = EarthquakeCoordinate(latitude: lat, longitude: lon)
     }

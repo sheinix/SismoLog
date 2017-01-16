@@ -43,6 +43,7 @@ public struct NotificationIds {
 struct NumberConstants {
     
     static let maxEarthquakes = 900
+    static let maxMinimumMagnitude : Float = 8.0
 }
 
 enum Months : Int {
@@ -112,6 +113,8 @@ struct Years {
         
         return yearsArray
     }()
-    
-    
+}
+
+struct UserDefaultsKeys {
+    static let didAskForRecentsKeys = "RecentsEarthquakes"
 }

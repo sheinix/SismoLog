@@ -39,7 +39,7 @@ class NetworkManager: NetworkManagementProtocol {
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationIds.newData),
                                             object: nil,
-                                            userInfo: ["eartquakes": earthQuakesResult])
+                                            userInfo: ["earthquakes": earthQuakesResult])
         })
         
     }

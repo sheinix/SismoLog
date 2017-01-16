@@ -11,7 +11,7 @@ import Foundation
 protocol NetworkManagementProtocol: class {
     
     
-    func getRecentEartquakes() //-> [Eartquake]
+    func getRecentEartquakes()
     
-    func getEarthquakesWith(filter: MapFilter) //-> [Eartquake]
+    func getEarthquakesWith(filter: MapFilter)
 }
