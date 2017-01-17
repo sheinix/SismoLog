@@ -10,7 +10,6 @@ import Foundation
 
 enum PickerSource : Int {
     
-    case numberOfEarthquakes
     case Month
     case Year
     case total
@@ -19,8 +18,6 @@ enum PickerSource : Int {
     var numberOfRows : Int {
         
         switch self {
-        case .numberOfEarthquakes:
-            return NumberConstants.maxEarthquakes
         case .Month:
              return Months.count
         case .Year:
@@ -37,8 +34,6 @@ enum PickerSource : Int {
         switch self {
         case .Month: return Months(rawValue: row)?.name
         case .Year:  return String(Years.years[row])
-        case .numberOfEarthquakes: return String(row)
-        
         default: break
         }
         return ""

@@ -10,6 +10,7 @@ import Foundation
 
 enum TableSections : Int {
     
+        case NumberOfEartquakes
         case Magnitude
         case PickerFilter
         case Buttons
@@ -19,8 +20,10 @@ enum TableSections : Int {
         switch self {
         case .Magnitude:
             return "Magnitud Minima"
+        case .NumberOfEartquakes:
+            return "Cantidad a visualizar"
         case .PickerFilter:
-            return "No. terremotos | Mes | Anio"
+            return " Seleccionar Mes - Anio "
         case .Buttons:
             return ""
         default:
@@ -35,7 +38,7 @@ enum TableSections : Int {
         var filterView = UIView()
         
         switch self {
-            case .Magnitude:
+            case .Magnitude, .NumberOfEartquakes:
                 filterView = getSlider()
             case .PickerFilter:
                 filterView = getNumberPicker()
@@ -52,19 +55,13 @@ enum TableSections : Int {
     public var numberOfRows : Int! {
         
         //Siempre una row por section por ahora
-        switch self {
-            case .Magnitude, .PickerFilter, .Buttons: return 1
-            
-            default: break
-        }
-        
         return 1
     }
     
     public var height : CGFloat! {
        
         switch self {
-        case .Magnitude: return 80
+        case .Magnitude, .NumberOfEartquakes : return 60
         case .Buttons:   return 60
         default:         break
         
@@ -75,21 +72,26 @@ enum TableSections : Int {
     fileprivate func getSlider() -> UISlider {
         
         let slider = UISlider()
+        slider.minimumValue = 1
         slider.isContinuous = true
-        
         switch self {
 
         case .Magnitude:
+            
             slider.maximumValue = NumberConstants.maxMinimumMagnitude
-            slider.minimumValue = 1
+            if let previousValue = NetworkManager.shared.filterData.magnitude {
+                slider.value = Float(previousValue)!
+            } else { slider.value = slider.maximumValue / 2 }
+        case .NumberOfEartquakes:
+            
+            slider.maximumValue = Float(NumberConstants.maxEarthquakes)
+            if let previousValue = NetworkManager.shared.filterData.numberOfEarthquakes {
+                slider.value = Float(previousValue)!
+            } else { slider.value = 400 }
         default:
             break
         }
-        
-        if let previousValue = NetworkManager.shared.filterData.magnitude {
-            slider.value = Float(previousValue)!
-        } else { slider.value = slider.maximumValue / 2 }
-        
+                
         return slider
     }
     

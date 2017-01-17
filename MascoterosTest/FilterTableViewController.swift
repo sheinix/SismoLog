@@ -18,13 +18,10 @@ protocol FilterProtocolDelegate : class {
 class FilterTableViewController: UITableViewController {
 
     weak var filterDelegate : FilterProtocolDelegate?
-    //var filterData : MapFilter?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // self.filterData = MapFilter()
         setupView()
     }
 
@@ -109,7 +106,6 @@ extension FilterTableViewController : FilterCellProtcolDelegate {
 
     func didUpdate(slider: TableSections, with value: String!) {
         
-        //filterData?.magnitude = value
         NetworkManager.shared.filterData.magnitude = value
         
     }
@@ -119,11 +115,10 @@ extension FilterTableViewController : FilterCellProtcolDelegate {
         switch component {
         case .Month:
             guard value != nil else { return }
-            //filterData?.month = Months.getMonthFrom(string: value)?.number\
             NetworkManager.shared.filterData.month = Months.getMonthFrom(string: value)?.number
-        case .numberOfEarthquakes:
+//        case .numberOfEarthquakes:
             //filterData?.numberOfEarthquakes = value
-            NetworkManager.shared.filterData.numberOfEarthquakes = value
+//            NetworkManager.shared.filterData.numberOfEarthquakes = value
         case .Year:
             NetworkManager.shared.filterData.year = value
            // filterData?.year = value

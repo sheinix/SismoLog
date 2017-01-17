@@ -37,14 +37,18 @@ class FiltersTableViewCell: UITableViewCell {
         
         self.clipsToBounds = true
     }
-
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        _  = self.subviews.map { $0.removeFromSuperview() }
+    }
  
     public func setCellFor(section: TableSections) {
         
         self.tag = section.rawValue
         
         switch section {
-        case .Magnitude:
+        case .Magnitude, .NumberOfEartquakes:
             setupSlider(slider: section.filter as! UISlider)
         case .PickerFilter:
             setupPicker(picker: section.filter as! UIPickerView)
@@ -89,12 +93,9 @@ class FiltersTableViewCell: UITableViewCell {
         picker.delegate = self
   
         if let prevMonth = NetworkManager.shared.filterData.month,
-           let prevYear = NetworkManager.shared.filterData.year,
-           let prevNumberEarthquakes = NetworkManager.shared.filterData.numberOfEarthquakes {
-           
+            let prevYear = NetworkManager.shared.filterData.year {
+          
             picker.selectRow(Int(prevMonth)!, inComponent: PickerSource.Month.rawValue, animated: false)
-            picker.selectRow(Int(prevNumberEarthquakes)!, inComponent: PickerSource.numberOfEarthquakes.rawValue, animated: false)
-            
             if let idx = Years.years.index(of: Int(prevYear)!) {
                 picker.selectRow(idx, inComponent: PickerSource.Year.rawValue, animated: false)
             }
@@ -126,7 +127,9 @@ class FiltersTableViewCell: UITableViewCell {
     
     @objc func sliderDidChange(sender: UISlider!) {
         
-        numberIndicator.text = String(format: "%.2f", sender.value)
+        let format = (self.tag == TableSections.Magnitude.rawValue ? "%.2f" : "%.0f")
+        
+        numberIndicator.text = String(format: format, sender.value)
         
         self.delegate?.didUpdate(slider: TableSections(rawValue: self.tag)!, with: numberIndicator.text)
     
@@ -156,9 +159,7 @@ extension FiltersTableViewCell : UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         
-        if component == PickerSource.Month.rawValue { return self.bounds.width / 2 }
-        
-        return self.bounds.width / 4
+        return self.bounds.width / 2
         
     }
     
