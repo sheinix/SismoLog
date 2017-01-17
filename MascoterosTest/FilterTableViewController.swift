@@ -10,7 +10,7 @@ import UIKit
 
 protocol FilterProtocolDelegate : class {
     
-    func didApply(filter: MapFilter, completion: () -> Void)
+    func didApply(completion: () -> Void)
     
 }
 
@@ -18,13 +18,13 @@ protocol FilterProtocolDelegate : class {
 class FilterTableViewController: UITableViewController {
 
     weak var filterDelegate : FilterProtocolDelegate?
-    var filterData : MapFilter?
+    //var filterData : MapFilter?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.filterData = MapFilter()
+       // self.filterData = MapFilter()
         setupView()
     }
 
@@ -109,26 +109,24 @@ extension FilterTableViewController : FilterCellProtcolDelegate {
 
     func didUpdate(slider: TableSections, with value: String!) {
         
-
-        switch slider {
-        case .Magnitude:
-            filterData?.magnitude = value
-//        case .Depth:
-//            filterData?.depth = value
-        default:
-            break
-        }
+        //filterData?.magnitude = value
+        NetworkManager.shared.filterData.magnitude = value
+        
     }
     
     func didUpdatePicker(component: PickerSource, with value: String!) {
         
         switch component {
         case .Month:
-            filterData?.month = Months.getMonthFrom(string: value)?.number
+            guard value != nil else { return }
+            //filterData?.month = Months.getMonthFrom(string: value)?.number\
+            NetworkManager.shared.filterData.month = Months.getMonthFrom(string: value)?.number
         case .numberOfEarthquakes:
-            filterData?.numberOfEarthquakes = value
+            //filterData?.numberOfEarthquakes = value
+            NetworkManager.shared.filterData.numberOfEarthquakes = value
         case .Year:
-            filterData?.year = value
+            NetworkManager.shared.filterData.year = value
+           // filterData?.year = value
         default:
             break
         }
@@ -137,11 +135,11 @@ extension FilterTableViewController : FilterCellProtcolDelegate {
     
     func didPressApplyButton() {
         
-        guard let filter = filterData else { self.dismiss(animated: true, completion: nil) ; return  }
+        //guard let filter = filterData else { self.dismiss(animated: true, completion: nil) ; return  }
         
-        NetworkManager.shared.getEarthquakesWith(filter: filter)
+        NetworkManager.shared.getEarthquakes()//With(filter: filter)
         
-        self.filterDelegate?.didApply(filter: filter, completion: {
+        self.filterDelegate?.didApply(completion: {
             
             self.dismiss(animated: true, completion: {})
         

@@ -13,5 +13,5 @@ protocol NetworkManagementProtocol: class {
     
     func getRecentEartquakes()
     
-    func getEarthquakesWith(filter: MapFilter)
+    func getEarthquakes()//With()//(filter: MapFilter)
 }

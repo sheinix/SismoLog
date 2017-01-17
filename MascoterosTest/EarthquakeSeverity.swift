@@ -19,9 +19,9 @@ enum EearthquakeSeverity : Int {
         
         switch magnitude {
         
-            case 0...2 : self = .light
-            case 2...6 : self = .normal
-//            case 6..10: self = .dangerous
+            case 0...3 : self = .light
+            case 3...6 : self = .normal
+            //case 6...10: self = .dangerous
             default: self = .dangerous
         }
     }
@@ -32,7 +32,7 @@ enum EearthquakeSeverity : Int {
         case .light:
             return UIColor.green
         case .normal:
-            return UIColor.orange
+            return UIColor.yellow
         case .dangerous:
             return UIColor.red
         }

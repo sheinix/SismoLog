@@ -30,6 +30,8 @@
 		269487A11E2C51A30047BC75 /* EarthquakeSeverity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487A01E2C51A30047BC75 /* EarthquakeSeverity.swift */; };
 		269487A31E2C83CF0047BC75 /* TableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487A21E2C83CF0047BC75 /* TableSectionHeaderView.swift */; };
 		269487A51E2C85E60047BC75 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487A41E2C85E60047BC75 /* HeaderView.swift */; };
+		269487A71E2CAC210047BC75 /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487A61E2CAC210047BC75 /* CustomInfoWindow.swift */; };
+		269487AB1E2D7DD00047BC75 /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269487AA1E2D7DD00047BC75 /* InfoWindow.xib */; };
 		D33634A5DA4FD7FAA82402C3 /* Pods_MascoterosTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D328996215E0B5ECA8B794B7 /* Pods_MascoterosTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		269487A01E2C51A30047BC75 /* EarthquakeSeverity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthquakeSeverity.swift; sourceTree = "<group>"; };
 		269487A21E2C83CF0047BC75 /* TableSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderView.swift; sourceTree = "<group>"; };
 		269487A41E2C85E60047BC75 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		269487A61E2CAC210047BC75 /* CustomInfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInfoWindow.swift; sourceTree = "<group>"; };
+		269487AA1E2D7DD00047BC75 /* InfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoWindow.xib; sourceTree = "<group>"; };
 		47634C8D0D42BA920D31A2E3 /* Pods-MascoterosTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MascoterosTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-MascoterosTest/Pods-MascoterosTest.release.xcconfig"; sourceTree = "<group>"; };
 		C0C2599F0F17F620AF3F3469 /* Pods-MascoterosTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MascoterosTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MascoterosTest/Pods-MascoterosTest.debug.xcconfig"; sourceTree = "<group>"; };
 		D328996215E0B5ECA8B794B7 /* Pods_MascoterosTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MascoterosTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,7 +133,6 @@
 			children = (
 				2694877D1E29C4F20047BC75 /* MapFilter.swift */,
 				269487821E29CFE10047BC75 /* Earthquake.swift */,
-				269487971E2B12CE0047BC75 /* PickerSource.swift */,
 				269487A01E2C51A30047BC75 /* EarthquakeSeverity.swift */,
 			);
 			name = Model;
@@ -184,10 +187,13 @@
 		269487901E2AFA0E0047BC75 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				269487971E2B12CE0047BC75 /* PickerSource.swift */,
 				269487A41E2C85E60047BC75 /* HeaderView.swift */,
 				269487A21E2C83CF0047BC75 /* TableSectionHeaderView.swift */,
 				269487911E2AFA2D0047BC75 /* TableHeaderView.swift */,
 				269487931E2AFA570047BC75 /* FiltersTableViewCell.swift */,
+				269487A61E2CAC210047BC75 /* CustomInfoWindow.swift */,
+				269487AA1E2D7DD00047BC75 /* InfoWindow.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				269487AB1E2D7DD00047BC75 /* InfoWindow.xib in Resources */,
 				26213FFD1E29AC07007352E3 /* LaunchScreen.storyboard in Resources */,
 				26213FFA1E29AC07007352E3 /* Assets.xcassets in Resources */,
 				26213FF81E29AC07007352E3 /* Main.storyboard in Resources */,
@@ -335,6 +342,7 @@
 				269487A31E2C83CF0047BC75 /* TableSectionHeaderView.swift in Sources */,
 				269487851E29D11E0047BC75 /* EartquakeProtocol.swift in Sources */,
 				2694878A1E29E8B30047BC75 /* Router.swift in Sources */,
+				269487A71E2CAC210047BC75 /* CustomInfoWindow.swift in Sources */,
 				269487871E29D35D0047BC75 /* EartquakeService.swift in Sources */,
 				2694878F1E2AF03C0047BC75 /* FilterViewDataSource.swift in Sources */,
 				2694877E1E29C4F20047BC75 /* MapFilter.swift in Sources */,

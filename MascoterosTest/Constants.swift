@@ -51,13 +51,14 @@ struct NumberConstants {
     static let maxEarthquakes = 900
     static let maxMinimumMagnitude : Float = 8.0
     static let tableSectionHeadersHeight : CGFloat = 60.0
+    static let defaultMapMarkerCalloutViewSize : CGPoint = CGPoint(x: 0, y: 0)
 }
 
 enum Months : Int {
     
     case January = 1, February, March, April, May, June, July, August, September, October, November, December
     
-    static var count : Int { return 12 }
+    static var count : Int { return 13 }
     var number : String! { return String(self.rawValue) }
     var name : String! {
         switch self {
@@ -100,6 +101,7 @@ enum Months : Int {
             case "Julio": return Months.July
             case "Agosto": return Months.August
             case "Septiembre": return Months.September
+            case "Octubre"   : return Months.October
             case "Noviembre": return Months.November
             case "Diciembre": return Months.December
        

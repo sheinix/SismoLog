@@ -14,7 +14,7 @@ class TableHeaderView: HeaderView {
     var closeButton : UIButton = {
         
         let button = UIButton(type: .custom)
-        button.setImage(UIImage(named:"filter"), for: .normal)
+        button.setImage(UIImage(named:"down-arrow"), for: .normal)
         return button
     }()
     

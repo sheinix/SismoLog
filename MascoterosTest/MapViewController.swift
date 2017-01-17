@@ -24,6 +24,7 @@ class MapViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+        
         setupViewElements()
         
         NotificationCenter.default.addObserver(self,
@@ -34,7 +35,13 @@ class MapViewController: UIViewController {
         firstLaunch()
         
     }
-
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(true)
+//        
+//    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(true)
+//    }
     fileprivate func firstLaunch() {
         
         guard UserDefaults.standard.bool(forKey: UserDefaultsKeys.didAskForRecentsKeys) else {
@@ -55,6 +62,7 @@ class MapViewController: UIViewController {
         filterButton.setImage(UIImage(named:"filter"), for: .normal)
         filterButton.addTarget(self, action: #selector(showFilterView), for: .touchUpInside)
         
+        mapView.delegate = self
         mapView.addSubview(filterButton)
         
         filterButton.snp.makeConstraints { (make) in
@@ -79,20 +87,33 @@ class MapViewController: UIViewController {
         
         let list = notification.userInfo?["earthquakes"] as! [Eartquake]
         
-        MapMarkerManager.shared.addMarkersFor(earthquakes: list, to: mapView)
-        
+        list.count == 0 ? mapView.clear() : MapMarkerManager.shared.addMarkersFor(earthquakes: list, to: mapView)
     }
 }
 
 extension MapViewController : FilterProtocolDelegate {
 
-    func didApply(filter: MapFilter, completion: () -> Void) {
-
-        print(filter)
+    func didApply(completion: () -> Void) {
+        
         completion()
     }
 }
+extension MapViewController : GMSMapViewDelegate {
+    
+    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+        
+        guard let infoView : CustomInfoWindow = (Bundle.main.loadNibNamed("InfoWindow", owner: self, options: nil)?[0] as? CustomInfoWindow) else { return nil }
+        
+        guard let earthquake = marker.userData as? Eartquake else { return nil }
+        
+        infoView.frame = CGRect(origin: marker.infoWindowAnchor, size: CGSize(width: 250, height: 140))
+        infoView.setValuesWith(earthquake: earthquake)
+        
+        return infoView
+        
+    }
 
+}
 extension MapViewController: CLLocationManagerDelegate {
     
     private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -109,13 +130,8 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
        
         if let location = locations.first {
-            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 6, bearing: 0, viewingAngle: 0)
+            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 2, bearing: 0, viewingAngle: 0)
             locationManager.stopUpdatingLocation()
-
-            _ = MapMarkerManager.shared.markerFor(latitude: location.coordinate.latitude,
-                                                  longitude: location.coordinate.longitude,
-                                                        map: mapView)
-            
         }
     }
     

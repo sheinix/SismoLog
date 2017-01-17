@@ -9,17 +9,16 @@
 import Foundation
 import ObjectMapper
 
-class Eartquake : NSObject, Mappable {
+class Eartquake : Mappable {
     
     var earthQuakeId : String?
-    var magnitude : Double? {
+    var magnitude : String? {
         didSet {
             guard let value = magnitude else { return }
-            severity = EearthquakeSeverity(magnitude: value)
+            severity = EearthquakeSeverity(magnitude: Double(value)!)
         }
     }
-    var depth : Double = 0
-    //var position : EarthquakeCoordinate?
+    var depth : String?
     var latitude : String?
     var longitude : String?
     var region : String?
@@ -29,30 +28,7 @@ class Eartquake : NSObject, Mappable {
     var month : Int?
     var severity : EearthquakeSeverity?
     
-    
-//    required public init(timedate : String, src : String, region: String, latitude: String, longitude: String, earthquakeId : String) {
-//        
-//        self.earthQuakeId = earthquakeId
-//    //    self.magnitude    = magnitude
-//     //   self.depth        = depth
-//        self.latitude     = latitude
-//        self.longitude    = longitude
-//        self.region       = region
-//        self.src          = src
-//        self.timedate     = timedate
-//        //self.severity = EearthquakeSeverity(magnitude: Double(self.magnitude))
-//        
-//        //TODO get year month
-//    }
-//    
-//    convenience init() {
-//        self.init(timedate : "", src : "", region: "", latitude: "", longitude: "", earthquakeId : "")
-//    }
-    
-    required init?(map: Map) {
-//        self.init()
-  //      mapping(map: map)
-    }
+    required init?(map: Map) { }
     
     func mapping(map: Map) {
         

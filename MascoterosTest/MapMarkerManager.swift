@@ -17,11 +17,6 @@ class MapMarkerManager {
         return sharedMapMarkerManager
         
     }
-    
-    var markerList : [GMSMarker]?
-    
-    //TODO Set color to the markers :
-    //
 
     public func addMarkersFor(earthquakes: [Eartquake]?, to map: GMSMapView) {
         
@@ -29,10 +24,12 @@ class MapMarkerManager {
         guard earthquakesList.count > 0 else { return }
         
         map.clear()
+       
         
         for earthquake in earthquakesList {
             
-            _ = markerFor(earthQuake: earthquake, in: map)
+             _ = markerFor(earthQuake: earthquake, in: map)
+           
         }
     }
     
@@ -44,13 +41,8 @@ class MapMarkerManager {
         
       
         marker.icon = GMSMarker.markerImage(with: earthQuake.severity?.color)
-    
-        marker.title = earthQuake.region
-        
-        if let magnitude = earthQuake.magnitude {
-            
-            marker.snippet = "Magnitud : " + String(magnitude)
-        }
+        marker.infoWindowAnchor = NumberConstants.defaultMapMarkerCalloutViewSize
+        marker.userData = earthQuake
         
         return marker
         

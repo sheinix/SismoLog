@@ -18,24 +18,26 @@ class NetworkManager: NetworkManagementProtocol {
         
     }
     
-    //MARK : - Protocol Methods
+    public var filterData = MapFilter()
+    
+    //MARK : - Protocol Methodsg
     
     func getRecentEartquakes() {
         
-        let dummyFilter = MapFilter()
-        
-        getEarthquakesWith(filter: dummyFilter)
+       // let dummyFilter = MapFilter()
+        getEarthquakes()
+        //getEarthquakesWith(filter: dummyFilter)
     }
     
-    func  getEarthquakesWith(filter: MapFilter) {
+    func  getEarthquakes() { //With (filter: MapFilter) {
         
-        let request = filter.requestForApi
+        let request = self.filterData.requestForApi
+//        let request = filter.requestForApi
         
         EartquakeService.request(routerRequest: request, completionHandler: { (success, earthQuakes) -> Void in
             
             guard (success) else { return }
             guard let earthQuakesResult = earthQuakes else { return }
-            if earthQuakesResult.count <= 0 { return }
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationIds.newData),
                                             object: nil,

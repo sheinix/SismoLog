@@ -18,9 +18,9 @@ enum TableSections : Int {
     public var title : String! {
         switch self {
         case .Magnitude:
-            return "Magnitud"
+            return "Magnitud Minima"
         case .PickerFilter:
-            return " Cantidad    |    Mes     |  Anio"
+            return "No. terremotos | Mes | Anio"
         case .Buttons:
             return ""
         default:
@@ -85,7 +85,10 @@ enum TableSections : Int {
         default:
             break
         }
-        slider.value = slider.maximumValue / 2
+        
+        if let previousValue = NetworkManager.shared.filterData.magnitude {
+            slider.value = Float(previousValue)!
+        } else { slider.value = slider.maximumValue / 2 }
         
         return slider
     }

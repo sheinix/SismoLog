@@ -87,14 +87,18 @@ class FiltersTableViewCell: UITableViewCell {
         
         picker.dataSource = self
         picker.delegate = self
-        
-//        picker.selectRow(Int(PickerSource.numberOfEarthquakes.numberOfRows/2),
-//                         inComponent: PickerSource.numberOfEarthquakes.rawValue, animated: false)
-//        picker.selectRow(Int(PickerSource.Month.numberOfRows/2),
-//                         inComponent: PickerSource.Month.rawValue, animated: false)
-//        
-//        picker.selectRow(Int(PickerSource.Year.numberOfRows/2),
-//                         inComponent: PickerSource.Year.rawValue, animated: false)
+  
+        if let prevMonth = NetworkManager.shared.filterData.month,
+           let prevYear = NetworkManager.shared.filterData.year,
+           let prevNumberEarthquakes = NetworkManager.shared.filterData.numberOfEarthquakes {
+           
+            picker.selectRow(Int(prevMonth)!, inComponent: PickerSource.Month.rawValue, animated: false)
+            picker.selectRow(Int(prevNumberEarthquakes)!, inComponent: PickerSource.numberOfEarthquakes.rawValue, animated: false)
+            
+            if let idx = Years.years.index(of: Int(prevYear)!) {
+                picker.selectRow(idx, inComponent: PickerSource.Year.rawValue, animated: false)
+            }
+        }
         
         addSubview(picker)
         picker.snp.makeConstraints { (make) in
@@ -122,7 +126,7 @@ class FiltersTableViewCell: UITableViewCell {
     
     @objc func sliderDidChange(sender: UISlider!) {
         
-        numberIndicator.text = String(sender.value)
+        numberIndicator.text = String(format: "%.2f", sender.value)
         
         self.delegate?.didUpdate(slider: TableSections(rawValue: self.tag)!, with: numberIndicator.text)
     

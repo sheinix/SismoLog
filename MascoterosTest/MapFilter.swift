@@ -9,15 +9,6 @@
 import Foundation
 import Alamofire
 
-struct DefaultFilterValues {
-    
-    static let magnitudeDefault           = "2.6"
-    static let numberOfEarthquakesDefault = "300"
-    static let depthDefault               = "2.6"
-    static let yearDefault                = "2013"
-    static let monthDefault               = "May"
-}
-
 struct MapFilter {
    
     var magnitude : String?

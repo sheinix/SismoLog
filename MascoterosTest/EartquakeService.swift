@@ -17,18 +17,22 @@ public struct EartquakeService {
     
     static func request(routerRequest: Router, completionHandler : @escaping CompletionHandler) {
    
-        //TODO set backgorund queue for completion handler!
+        let queue = DispatchQueue(label: "com.Seismi.response-queue",
+                                    qos: .utility,
+                             attributes: [.concurrent])
         
-        Alamofire.request(routerRequest).validate().responseArray(queue: nil, keyPath: "earthquakes", context: nil,  completionHandler: { (response : DataResponse<[Eartquake]>) in
+        Alamofire.request(routerRequest).validate().responseArray(queue: queue, keyPath: "earthquakes", context: nil,  completionHandler: { (response : DataResponse<[Eartquake]>) in
             
             guard response.result.isSuccess else {
                 
                 print(response.result.error ?? "Not Succesful")
-                completionHandler(false, nil)
+                
+                DispatchQueue.main.async { completionHandler(false, nil) }
+                
                 return
             }
-
-            completionHandler(true, response.result.value)
+            
+            DispatchQueue.main.async { completionHandler(true, response.result.value) }
             
         })
     }
