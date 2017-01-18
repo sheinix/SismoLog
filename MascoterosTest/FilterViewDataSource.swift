@@ -23,7 +23,7 @@ enum TableSections : Int {
         case .NumberOfEartquakes:
             return "Cantidad a visualizar"
         case .PickerFilter:
-            return " Seleccionar Mes - Anio "
+            return "Mes / Año"
         case .Buttons:
             return ""
         default:

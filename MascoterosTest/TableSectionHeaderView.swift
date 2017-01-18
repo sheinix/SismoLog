@@ -17,7 +17,7 @@ class TableSectionHeaderView: HeaderView {
         
         self.backgroundColor = UIColor.white
         self.titleLabel.textColor = UIColor.darkGray
-        self.titleLabel.font = UIFont.systemFont(ofSize: 25)
+        self.titleLabel.font = Fonts.mainFontBig
     }
     
     required init?(coder aDecoder: NSCoder) {

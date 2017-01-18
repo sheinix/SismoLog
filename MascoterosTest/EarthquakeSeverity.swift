@@ -32,7 +32,7 @@ enum EearthquakeSeverity : Int {
         case .light:
             return UIColor.green
         case .normal:
-            return UIColor.yellow
+            return UIColor.orange
         case .dangerous:
             return UIColor.red
         }

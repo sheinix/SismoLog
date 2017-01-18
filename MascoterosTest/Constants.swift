@@ -8,15 +8,12 @@
 
 import Foundation
 
-
-
 struct ApiKeys {
     static let googleMapsApiKey = "AIzaSyCd7ASIZ3tp4RzM0l1l1TOvO2Y1x8j2FqE"
 }
 
 struct Sesmi {
     static let baseRequest = "http://www.seismi.org/api/eqs"
-//    static let baseRequest = "http://www.seismi.org/api/eqs"
 }
 
 public struct EarthquakeCoordinate {
@@ -42,7 +39,11 @@ public struct NotificationIds {
 
 struct Colors {
      static let mainColor = UIColor(red: 226/255, green: 100/255, blue: 95/255, alpha: 0.9)
-        
+}
+struct Fonts {
+    static let mainFontBig    = UIFont(name: "Avenir-Light", size: 26)!
+    static let mainFontMedium = UIFont(name: "Avenir-Light", size: 16)!
+    static let mainFontSmall = UIFont(name: "Avenir-Light", size: 10)!
     
 }
 
@@ -59,7 +60,14 @@ enum Months : Int {
     case January = 1, February, March, April, May, June, July, August, September, October, November, December
     
     static var count : Int { return 13 }
-    var number : String! { return String(self.rawValue) }
+    
+    var number : String! {
+        
+        let valueStr = String(self.rawValue)
+        return (valueStr.characters.count == 1 ? "0"+valueStr : valueStr)
+    }
+   
+    
     var name : String! {
         switch self {
         case .January:
@@ -122,8 +130,4 @@ struct Years {
         
         return yearsArray
     }()
-}
-
-struct UserDefaultsKeys {
-    static let didAskForRecentsKeys = "RecentsEarthquakes"
 }

@@ -21,10 +21,10 @@ class MapMarkerManager {
     public func addMarkersFor(earthquakes: [Eartquake]?, to map: GMSMapView) {
         
         guard let earthquakesList = earthquakes else { return }
-        guard earthquakesList.count > 0 else { return }
         
         map.clear()
        
+        guard earthquakesList.count > 0 else { return }
         
         for earthquake in earthquakesList {
             

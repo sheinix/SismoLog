@@ -24,7 +24,7 @@ class TableHeaderView: HeaderView {
         
         self.backgroundColor = Colors.mainColor
         self.titleLabel.textColor = .white
-        self.titleLabel.font = UIFont.systemFont(ofSize: 25)
+        self.titleLabel.font = Fonts.mainFontBig
         self.titleLabel.text = "Filtrar Terremotos"
         
         

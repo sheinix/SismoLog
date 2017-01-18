@@ -23,7 +23,7 @@ public enum Router: URLRequestConvertible {
     //Solo voy a hacer gets por ahora:
     var method: HTTPMethod { return .get }
     
-    //Armo los paths para anio, mes y totals:
+    //Armo los paths para año, mes y totals:
     var path: String! {
         
         switch self {

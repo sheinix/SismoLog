@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-import ObjectMapper
+//import ObjectMapper
 import AlamofireObjectMapper
 
 typealias CompletionHandler = (_ success:Bool, _ earthQuakes : [Eartquake]?) -> Void

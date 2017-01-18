@@ -24,7 +24,7 @@ class FiltersTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = Colors.mainColor
-        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.font = Fonts.mainFontMedium
         label.isHidden = true
         return label
     }()
@@ -92,14 +92,7 @@ class FiltersTableViewCell: UITableViewCell {
         picker.dataSource = self
         picker.delegate = self
   
-        if let prevMonth = NetworkManager.shared.filterData.month,
-            let prevYear = NetworkManager.shared.filterData.year {
-          
-            picker.selectRow(Int(prevMonth)!, inComponent: PickerSource.Month.rawValue, animated: false)
-            if let idx = Years.years.index(of: Int(prevYear)!) {
-                picker.selectRow(idx, inComponent: PickerSource.Year.rawValue, animated: false)
-            }
-        }
+        preLoad(picker: picker)
         
         addSubview(picker)
         picker.snp.makeConstraints { (make) in
@@ -125,9 +118,23 @@ class FiltersTableViewCell: UITableViewCell {
         
     }
     
+    fileprivate func preLoad(picker: UIPickerView) {
+        
+        if let prevMonth = NetworkManager.shared.filterData.month {
+            picker.selectRow(Int(prevMonth)!, inComponent: PickerSource.Month.rawValue, animated: false)
+        }
+        
+        if let prevYear = NetworkManager.shared.filterData.year {
+            if let idx = Years.years.index(of: Int(prevYear)!) {
+                picker.selectRow(idx, inComponent: PickerSource.Year.rawValue, animated: false)
+            }
+        }
+    }
+    
+    
     @objc func sliderDidChange(sender: UISlider!) {
         
-        let format = (self.tag == TableSections.Magnitude.rawValue ? "%.2f" : "%.0f")
+        let format = (self.tag == TableSections.Magnitude.rawValue ? "%.2f" : "%.f")
         
         numberIndicator.text = String(format: format, sender.value)
         

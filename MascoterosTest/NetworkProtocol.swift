@@ -10,8 +10,7 @@ import Foundation
 
 protocol NetworkManagementProtocol: class {
     
-    
     func getRecentEartquakes()
     
-    func getEarthquakes()//With()//(filter: MapFilter)
+    func getEarthquakes()
 }

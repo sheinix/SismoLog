@@ -41,7 +41,5 @@ class Eartquake : Mappable {
         latitude      <- map["lat"]
         longitude     <- map["lon"]
         
-        
-        //position = EarthquakeCoordinate(latitude: lat, longitude: lon)
     }
 }

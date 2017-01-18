@@ -13,7 +13,6 @@ struct MapFilter {
    
     var magnitude : String?
     var numberOfEarthquakes : String?
-    var depth : String?
     var year : String?
     var month : String?
     
@@ -34,15 +33,21 @@ struct MapFilter {
         
     }
     
+    var dateText : String {
+        if let year = self.year, let month = self.month {
+            return (Months(rawValue: Int(month)!)?.name)! + " " + year
+        }
+        return (self.year != nil ? self.year! : "Recientes")
+    }
+        
     init() {
         
     }
     
-    init(magnitude : String?, numberOfEarthquakes : String?, depth : String? , year : String?, month: String?) {
+    init(magnitude : String?, numberOfEarthquakes : String?, year : String?, month: String?) {
         
         self.magnitude = magnitude
         self.numberOfEarthquakes = numberOfEarthquakes
-        self.depth = depth
         self.year = year
         self.month = month
     }

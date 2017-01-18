@@ -40,8 +40,7 @@ class CustomInfoWindow: UIView {
     
     public func setValuesWith(earthquake: Eartquake) {
         
-        
-        //if let color = earthquake.severity?.color { self.magnitudeValue.textColor = color }
+        if let color = earthquake.severity?.color { self.magnitudeValue.textColor = color }
         
         if let region   = earthquake.region { self.regionValue.text = region }
         if let magnitud = earthquake.magnitude { self.magnitudeValue.text = magnitud }

@@ -12,19 +12,14 @@ import SnapKit
 class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
-    
+    var summaryView  = SummaryView(frame: CGRect.zero)
     var filterButton = UIButton(type: .custom)
-    let locationManager = CLLocationManager()
     var earthquakes : [Eartquake]?
     
     override func viewDidLoad() {
+
         super.viewDidLoad()
 
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-        
-        
         setupViewElements()
         
         NotificationCenter.default.addObserver(self,
@@ -32,27 +27,14 @@ class MapViewController: UIViewController {
                                                 name: NSNotification.Name(rawValue: NotificationIds.newData),
                                               object: nil)
         
-        firstLaunch()
+        NetworkManager.shared.getRecentEartquakes()
         
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(true)
-//        
-//    }
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(true)
-//    }
-    fileprivate func firstLaunch() {
-        
-        guard UserDefaults.standard.bool(forKey: UserDefaultsKeys.didAskForRecentsKeys) else {
-            
-            NetworkManager.shared.getRecentEartquakes()
-            
-          //  UserDefaults.standard.set(true, forKey: UserDefaultsKeys.didAskForRecentsKeys)
-           // UserDefaults.standard.synchronize()
-            
-            return
-        }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+    
+        super.viewWillDisappear(animated)
+        self.summaryView.alpha = 0
     }
     
     fileprivate func setupViewElements() {
@@ -60,17 +42,29 @@ class MapViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     
         filterButton.setImage(UIImage(named:"filter"), for: .normal)
+        filterButton.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
+        filterButton.layer.cornerRadius = 6
         filterButton.addTarget(self, action: #selector(showFilterView), for: .touchUpInside)
         
         mapView.delegate = self
         mapView.addSubview(filterButton)
+        mapView.addSubview(summaryView)
         
+        //Set constraints:
         filterButton.snp.makeConstraints { (make) in
             make.right.equalToSuperview().offset(-10)
-            make.top.equalToSuperview().offset(20)
+            make.top.equalToSuperview().offset(25)
             make.width.equalTo(50)
             make.height.equalTo(50)
         }
+        
+        summaryView.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(10)
+            make.top.equalToSuperview().offset(25)
+            make.width.equalTo(200)
+            make.height.equalTo(60)
+        }
+        
     }
     
     
@@ -85,9 +79,11 @@ class MapViewController: UIViewController {
     
     @objc func earthquakesListHasNewData(notification: NSNotification) {
         
-        let list = notification.userInfo?["earthquakes"] as! [Eartquake]
+        guard let list = notification.userInfo?["earthquakes"] as? [Eartquake] else { return }
         
-        list.count == 0 ? mapView.clear() : MapMarkerManager.shared.addMarkersFor(earthquakes: list, to: mapView)
+        MapMarkerManager.shared.addMarkersFor(earthquakes: list, to: mapView)
+        
+        summaryView.setNew(count: list.count)
     }
 }
 
@@ -98,6 +94,7 @@ extension MapViewController : FilterProtocolDelegate {
         completion()
     }
 }
+
 extension MapViewController : GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
@@ -110,32 +107,6 @@ extension MapViewController : GMSMapViewDelegate {
         infoView.setValuesWith(earthquake: earthquake)
         
         return infoView
-        
-    }
-
-}
-extension MapViewController: CLLocationManagerDelegate {
-    
-    private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-    
-        if status == .authorizedWhenInUse {
-            
-            locationManager.startUpdatingLocation()
-            mapView.isMyLocationEnabled = true
-            mapView.settings.myLocationButton = true
-        }
-    }
-    
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-       
-        if let location = locations.first {
-            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 2, bearing: 0, viewingAngle: 0)
-            locationManager.stopUpdatingLocation()
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         
     }
 }

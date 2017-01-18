@@ -14,7 +14,6 @@ protocol FilterProtocolDelegate : class {
     
 }
 
-
 class FilterTableViewController: UITableViewController {
 
     weak var filterDelegate : FilterProtocolDelegate?
@@ -106,22 +105,20 @@ extension FilterTableViewController : FilterCellProtcolDelegate {
 
     func didUpdate(slider: TableSections, with value: String!) {
         
-        NetworkManager.shared.filterData.magnitude = value
-        
+        if (slider == TableSections.Magnitude){
+                NetworkManager.shared.filterData.magnitude = value
+        } else {
+            NetworkManager.shared.filterData.numberOfEarthquakes = value
+        }
     }
     
     func didUpdatePicker(component: PickerSource, with value: String!) {
         
         switch component {
         case .Month:
-            guard value != nil else { return }
-            NetworkManager.shared.filterData.month = Months.getMonthFrom(string: value)?.number
-//        case .numberOfEarthquakes:
-            //filterData?.numberOfEarthquakes = value
-//            NetworkManager.shared.filterData.numberOfEarthquakes = value
+            NetworkManager.shared.filterData.month = (value != nil ? Months.getMonthFrom(string: value)?.number : value)
         case .Year:
             NetworkManager.shared.filterData.year = value
-           // filterData?.year = value
         default:
             break
         }
@@ -129,8 +126,6 @@ extension FilterTableViewController : FilterCellProtcolDelegate {
     }
     
     func didPressApplyButton() {
-        
-        //guard let filter = filterData else { self.dismiss(animated: true, completion: nil) ; return  }
         
         NetworkManager.shared.getEarthquakes()//With(filter: filter)
         

@@ -13,12 +13,12 @@
 		26213FFD1E29AC07007352E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26213FFB1E29AC07007352E3 /* LaunchScreen.storyboard */; };
 		262140071E29AF01007352E3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262140061E29AF01007352E3 /* NetworkManager.swift */; };
 		2621400A1E29AF7A007352E3 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262140091E29AF7A007352E3 /* NetworkProtocol.swift */; };
+		267BE7991E2DEEC40097EF50 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267BE7981E2DEEC40097EF50 /* SummaryView.swift */; };
 		269487771E29BA270047BC75 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487761E29BA270047BC75 /* Constants.swift */; };
 		2694877A1E29BB180047BC75 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487791E29BB180047BC75 /* MapViewController.swift */; };
 		2694877C1E29C47E0047BC75 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694877B1E29C47E0047BC75 /* FilterTableViewController.swift */; };
 		2694877E1E29C4F20047BC75 /* MapFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694877D1E29C4F20047BC75 /* MapFilter.swift */; };
 		269487831E29CFE10047BC75 /* Earthquake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487821E29CFE10047BC75 /* Earthquake.swift */; };
-		269487851E29D11E0047BC75 /* EartquakeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487841E29D11E0047BC75 /* EartquakeProtocol.swift */; };
 		269487871E29D35D0047BC75 /* EartquakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487861E29D35D0047BC75 /* EartquakeService.swift */; };
 		2694878A1E29E8B30047BC75 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487891E29E8B30047BC75 /* Router.swift */; };
 		2694878D1E29FD7E0047BC75 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694878C1E29FD7E0047BC75 /* Parameters.swift */; };
@@ -44,13 +44,13 @@
 		26213FFE1E29AC07007352E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		262140061E29AF01007352E3 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		262140091E29AF7A007352E3 /* NetworkProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
+		267BE7981E2DEEC40097EF50 /* SummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		269487731E29B9B40047BC75 /* MascoterosTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MascoterosTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		269487761E29BA270047BC75 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		269487791E29BB180047BC75 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2694877B1E29C47E0047BC75 /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
 		2694877D1E29C4F20047BC75 /* MapFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapFilter.swift; sourceTree = "<group>"; };
 		269487821E29CFE10047BC75 /* Earthquake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Earthquake.swift; sourceTree = "<group>"; };
-		269487841E29D11E0047BC75 /* EartquakeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EartquakeProtocol.swift; sourceTree = "<group>"; };
 		269487861E29D35D0047BC75 /* EartquakeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EartquakeService.swift; sourceTree = "<group>"; };
 		269487891E29E8B30047BC75 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		2694878C1E29FD7E0047BC75 /* Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
@@ -151,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				262140091E29AF7A007352E3 /* NetworkProtocol.swift */,
-				269487841E29D11E0047BC75 /* EartquakeProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -194,6 +193,7 @@
 				269487931E2AFA570047BC75 /* FiltersTableViewCell.swift */,
 				269487A61E2CAC210047BC75 /* CustomInfoWindow.swift */,
 				269487AA1E2D7DD00047BC75 /* InfoWindow.xib */,
+				267BE7981E2DEEC40097EF50 /* SummaryView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -340,7 +340,6 @@
 				2694878D1E29FD7E0047BC75 /* Parameters.swift in Sources */,
 				2694877A1E29BB180047BC75 /* MapViewController.swift in Sources */,
 				269487A31E2C83CF0047BC75 /* TableSectionHeaderView.swift in Sources */,
-				269487851E29D11E0047BC75 /* EartquakeProtocol.swift in Sources */,
 				2694878A1E29E8B30047BC75 /* Router.swift in Sources */,
 				269487A71E2CAC210047BC75 /* CustomInfoWindow.swift in Sources */,
 				269487871E29D35D0047BC75 /* EartquakeService.swift in Sources */,
@@ -353,6 +352,7 @@
 				262140071E29AF01007352E3 /* NetworkManager.swift in Sources */,
 				26213FF31E29AC07007352E3 /* AppDelegate.swift in Sources */,
 				2694879F1E2C43A90047BC75 /* MapMarkerManager.swift in Sources */,
+				267BE7991E2DEEC40097EF50 /* SummaryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

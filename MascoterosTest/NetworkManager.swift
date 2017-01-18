@@ -24,15 +24,13 @@ class NetworkManager: NetworkManagementProtocol {
     
     func getRecentEartquakes() {
         
-       // let dummyFilter = MapFilter()
-        getEarthquakes()
-        //getEarthquakesWith(filter: dummyFilter)
+       getEarthquakes()
+        
     }
     
-    func  getEarthquakes() { //With (filter: MapFilter) {
+    func  getEarthquakes() {
         
         let request = self.filterData.requestForApi
-//        let request = filter.requestForApi
         
         EartquakeService.request(routerRequest: request, completionHandler: { (success, earthQuakes) -> Void in
             
