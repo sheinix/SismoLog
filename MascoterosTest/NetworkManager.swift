@@ -19,17 +19,17 @@ class NetworkManager: NetworkManagementProtocol {
     }
     
     public var filterData = MapFilter()
+    public var connectionAvailable : Bool { return Utilities.isNetworkAvailable() }
     
-    //MARK : - Protocol Methodsg
-    
-    func getRecentEartquakes() {
-        
-       getEarthquakes()
-        
-    }
-    
+    //MARK : - Protocol Methods
+ 
     func  getEarthquakes() {
         
+        if self.connectionAvailable { makeRequest() }
+    }
+    
+    fileprivate func makeRequest() {
+      
         let request = self.filterData.requestForApi
         
         EartquakeService.request(routerRequest: request, completionHandler: { (success, earthQuakes) -> Void in
@@ -41,7 +41,8 @@ class NetworkManager: NetworkManagementProtocol {
                                             object: nil,
                                             userInfo: ["earthquakes": earthQuakesResult])
         })
-        
+
     }
+    
     
 }

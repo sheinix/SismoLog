@@ -75,29 +75,29 @@ class SummaryView: UIView {
         totalCountLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(5)
             make.top.equalToSuperview().offset(5)
-            make.width.equalTo(140)
-            make.height.equalTo(20)
+            make.width.equalTo(130)
+            make.height.equalTo(18)
         }
         
         totalCountValue.snp.makeConstraints { (make) in
             make.left.equalTo(totalCountLabel.snp.right).offset(5)
             make.top.equalToSuperview().offset(5)
             make.right.equalToSuperview().offset(-5)
-            make.height.equalTo(20)
+            make.height.equalTo(18)
         }
         
         dateLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(5)
             make.top.equalTo(totalCountLabel.snp.bottom).offset(10)
             make.width.equalTo(70)
-            make.bottom.equalToSuperview().offset(-5)
+            make.bottom.equalToSuperview().offset(-10)
         }
         
         dateLabelValue.snp.makeConstraints { (make) in
             make.left.equalTo(dateLabel.snp.right).offset(5)
             make.top.equalTo(totalCountValue.snp.bottom).offset(10)
             make.right.equalToSuperview().offset(-5)
-            make.bottom.equalToSuperview().offset(-5)
+            make.bottom.equalToSuperview().offset(-10)
         }
     }
     

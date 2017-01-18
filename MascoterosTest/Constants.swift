@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SystemConfiguration
 
 struct ApiKeys {
     static let googleMapsApiKey = "AIzaSyCd7ASIZ3tp4RzM0l1l1TOvO2Y1x8j2FqE"
@@ -35,6 +36,7 @@ public struct CellIds {
 
 public struct NotificationIds {
     static let newData = "newDataId"
+    static let noNetworkConnection = "noNetworkConnection"
 }
 
 struct Colors {
@@ -131,3 +133,33 @@ struct Years {
         return yearsArray
     }()
 }
+
+struct Utilities {
+    
+    static func isNetworkAvailable() -> Bool {
+        
+        var zeroAddress = sockaddr_in()
+        zeroAddress.sin_len = UInt8(MemoryLayout<sockaddr_in>.size)
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        
+        guard let defaultRouteReachability = withUnsafePointer(to: &zeroAddress, {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {
+                SCNetworkReachabilityCreateWithAddress(nil, $0)
+            }
+        }) else {
+            return false
+        }
+        
+        var flags: SCNetworkReachabilityFlags = []
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags) {
+            return false
+        }
+        
+        let isReachable = flags.contains(.reachable)
+        let needsConnection = flags.contains(.connectionRequired)
+        
+        return (isReachable && !needsConnection)
+    }
+    
+}
+
