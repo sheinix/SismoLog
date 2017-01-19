@@ -125,7 +125,7 @@ class FiltersTableViewCell: UITableViewCell {
         }
         
         if let prevYear = NetworkManager.shared.filterData.year {
-            if let idx = Years.years.index(of: Int(prevYear)!) {
+            if let idx = Years.years.index(of: (prevYear == "" ? 0 : Int(prevYear)!)) {
                 picker.selectRow(idx, inComponent: PickerSource.Year.rawValue, animated: false)
             }
         }

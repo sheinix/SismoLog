@@ -31,7 +31,7 @@ class NetworkManager: NetworkManagementProtocol {
     fileprivate func makeRequest() {
       
         let request = self.filterData.requestForApi
-        
+   
         EartquakeService.request(routerRequest: request, completionHandler: { (success, earthQuakes) -> Void in
             
             guard (success) else { return }

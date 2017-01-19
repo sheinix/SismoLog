@@ -12,14 +12,14 @@ import Alamofire
 //Router para formar las url de la llamada a la API conformando a URLRequestConvertible de Alamofire
 
 public enum Router: URLRequestConvertible {
-    
+
     static let baseURLString = Sesmi.baseRequest
     
     case plain(parameters: Parameters)
     case year(yearNumber: String, parameters: Parameters)
     case month(yearNumber: String, monthNumber: String, parameters: Parameters)
     case totals
-    
+        
     //Solo voy a hacer gets por ahora:
     var method: HTTPMethod { return .get }
     
@@ -56,14 +56,8 @@ public enum Router: URLRequestConvertible {
         
         switch self {
             
-            case .plain(let parameters):
+            case .plain(let parameters), .year(_, let parameters), .month(_, _, let parameters):
                 
-                urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
-            
-            case .year(_, let parameters):
-                urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
-            
-            case .month(_, _, let parameters):
                 urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
             
             case .totals:

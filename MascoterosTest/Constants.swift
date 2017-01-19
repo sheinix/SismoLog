@@ -57,11 +57,9 @@ struct NumberConstants {
     static let defaultMapMarkerCalloutViewSize : CGPoint = CGPoint(x: 0, y: 0)
 }
 
-enum Months : Int {
+enum Months : Int , EnumCollection {
     
-    case January = 1, February, March, April, May, June, July, August, September, October, November, December
-    
-    static var count : Int { return 13 }
+    case January = 1, February, March, April, May, June, July, August, September, October, November, December, NoData
     
     var number : String! {
         
@@ -96,7 +94,10 @@ enum Months : Int {
             return "Noviembre"
         case .December:
             return "Diciembre"
+        default:
+            return ""
         }
+        
     }
     
     static func getMonthFrom(string: String) -> Months? {
@@ -126,10 +127,11 @@ struct Years {
     
     static var years : [Int] = {
         
-        var yearsArray = [Int]()
+        var yearsArray = [0]
         let currentYear : Int = Calendar.current.component(.year, from: Date())
         for year in 0...10 { yearsArray.append(currentYear-year) }
         
+    
         return yearsArray
     }()
 }

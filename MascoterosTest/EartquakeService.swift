@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import AlamofireObjectMapper
 
-typealias CompletionHandler = (_ success:Bool, _ earthQuakes : [Eartquake]?) -> Void
+typealias CompletionHandler = (_ success:Bool, _ objectList : [AnyObject]?) -> Void
 
 public struct EartquakeService {
     

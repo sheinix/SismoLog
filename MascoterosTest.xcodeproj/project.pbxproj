@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		261E85C11E307FC900B4CA88 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		26213FF31E29AC07007352E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26213FF21E29AC07007352E3 /* AppDelegate.swift */; };
 		26213FF81E29AC07007352E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26213FF61E29AC07007352E3 /* Main.storyboard */; };
 		26213FFA1E29AC07007352E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26213FF91E29AC07007352E3 /* Assets.xcassets */; };
 		26213FFD1E29AC07007352E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26213FFB1E29AC07007352E3 /* LaunchScreen.storyboard */; };
 		262140071E29AF01007352E3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262140061E29AF01007352E3 /* NetworkManager.swift */; };
 		2621400A1E29AF7A007352E3 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262140091E29AF7A007352E3 /* NetworkProtocol.swift */; };
+		265154DC1E308E6400E7B940 /* EnumCollectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265154DB1E308E6400E7B940 /* EnumCollectionProtocol.swift */; };
 		267BE7991E2DEEC40097EF50 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267BE7981E2DEEC40097EF50 /* SummaryView.swift */; };
 		269487771E29BA270047BC75 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487761E29BA270047BC75 /* Constants.swift */; };
 		2694877A1E29BB180047BC75 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487791E29BB180047BC75 /* MapViewController.swift */; };
@@ -44,6 +46,7 @@
 		26213FFE1E29AC07007352E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		262140061E29AF01007352E3 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		262140091E29AF7A007352E3 /* NetworkProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
+		265154DB1E308E6400E7B940 /* EnumCollectionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumCollectionProtocol.swift; sourceTree = "<group>"; };
 		267BE7981E2DEEC40097EF50 /* SummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		269487731E29B9B40047BC75 /* MascoterosTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MascoterosTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		269487761E29BA270047BC75 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -151,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				262140091E29AF7A007352E3 /* NetworkProtocol.swift */,
+				265154DB1E308E6400E7B940 /* EnumCollectionProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -344,10 +348,12 @@
 				269487A71E2CAC210047BC75 /* CustomInfoWindow.swift in Sources */,
 				269487871E29D35D0047BC75 /* EartquakeService.swift in Sources */,
 				2694878F1E2AF03C0047BC75 /* FilterViewDataSource.swift in Sources */,
+				261E85C11E307FC900B4CA88 /* (null) in Sources */,
 				2694877E1E29C4F20047BC75 /* MapFilter.swift in Sources */,
 				269487831E29CFE10047BC75 /* Earthquake.swift in Sources */,
 				269487981E2B12CE0047BC75 /* PickerSource.swift in Sources */,
 				269487A51E2C85E60047BC75 /* HeaderView.swift in Sources */,
+				265154DC1E308E6400E7B940 /* EnumCollectionProtocol.swift in Sources */,
 				2621400A1E29AF7A007352E3 /* NetworkProtocol.swift in Sources */,
 				262140071E29AF01007352E3 /* NetworkManager.swift in Sources */,
 				26213FF31E29AC07007352E3 /* AppDelegate.swift in Sources */,

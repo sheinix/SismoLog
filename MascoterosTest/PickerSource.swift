@@ -19,7 +19,7 @@ enum PickerSource : Int {
         
         switch self {
         case .Month:
-             return Months.count
+             return Months.allValues.count
         case .Year:
             return Years.years.count
         default:
@@ -33,7 +33,7 @@ enum PickerSource : Int {
         
         switch self {
         case .Month: return Months(rawValue: row)?.name
-        case .Year:  return String(Years.years[row])
+        case .Year:  return (row == 0 ? "" : String(Years.years[row]))
         default: break
         }
         return ""
