@@ -17,7 +17,6 @@ class NetworkManager: NetworkManagementProtocol {
         return sharedNetworkManager
         
     }
-    
     public var filterData = MapFilter()
     public var connectionAvailable : Bool { return Utilities.isNetworkAvailable() }
     
@@ -32,7 +31,7 @@ class NetworkManager: NetworkManagementProtocol {
       
         let request = self.filterData.requestForApi
    
-        EartquakeService.request(routerRequest: request, completionHandler: { (success, earthQuakes) -> Void in
+        EartquakeService.request(routerRequest: request, keyPath: Sesmi.keyPath, completionHandler: { (success, earthQuakes) -> Void in
             
             guard (success) else { return }
             guard let earthQuakesResult = earthQuakes else { return }

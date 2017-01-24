@@ -38,7 +38,7 @@ class DepthSlider: UIView {
         label.layer.cornerRadius = 9
         return label
     }()
-
+    
     weak var delegate : sliderProtocolDelegate?
     
     override func awakeFromNib() {
@@ -64,9 +64,7 @@ class DepthSlider: UIView {
         depthSlider.addTarget(self, action: #selector(depthSliderChanged), for: .valueChanged)
         depthSlider.addTarget(self, action: #selector(didEndSliding), for: .touchUpInside)
         self.clipsToBounds = false
-        
-        
-        
+     
         addSubview(depthSlider)
         addSubview(sliderLabel)
         
@@ -96,5 +94,4 @@ class DepthSlider: UIView {
         self.delegate?.sliderDidEndSlidingWith(value: sender.value)
         
     }
-
 }

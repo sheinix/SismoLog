@@ -15,6 +15,7 @@ struct ApiKeys {
 
 struct Sesmi {
     static let baseRequest = "http://www.seismi.org/api/eqs"
+    static let keyPath = "earthquakes"
 }
 
 public struct EarthquakeCoordinate {

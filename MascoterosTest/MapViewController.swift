@@ -78,7 +78,7 @@ class MapViewController: UIViewController {
             make.left.equalToSuperview().offset(10)
             make.top.equalToSuperview().offset(25)
             make.width.equalTo(180)
-            make.height.equalTo(60)
+            make.height.equalTo(80)
         }
         
         depthSlider.snp.makeConstraints { (make) in
@@ -112,9 +112,12 @@ class MapViewController: UIViewController {
         
         MapMarkerManager.shared.addMarkersFor(earthquakes: list, to: mapView)
         
-        summaryView.setNew(count: list.count)
+        summaryView.setNew(count: list.count, resetDepth: true)
         
-        depthSlider.depthSlider.setValue(1, animated: false)
+        depthSlider.depthSlider.setValue(1, animated: true)
+        depthSlider.sliderLabel.text = "1"
+        
+
     }
 
 }
@@ -132,7 +135,9 @@ extension MapViewController : sliderProtocolDelegate {
     func sliderDidEndSlidingWith(value: Float) {
         
         let newCount = MapMarkerManager.shared.filterMapMarkersIn(mapView: self.mapView, with: value)
-        summaryView.setNew(count: newCount)
+        NetworkManager.shared.filterData.minDepth = String(format: "%.2f", value)
+        //summaryView.depthLabelValue.text = String(format: "%.2f", value)
+        summaryView.setNew(count: newCount, resetDepth: false)
         
     }
 }

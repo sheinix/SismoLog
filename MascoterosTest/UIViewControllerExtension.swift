@@ -10,7 +10,6 @@ import Foundation
 
 extension UIViewController {
     
-    
     func showAlertWith(titleStr: String, msg: String) {
         
         let alert = UIAlertController(title: titleStr,

@@ -14,13 +14,14 @@ typealias CompletionHandler = (_ success:Bool, _ objectList : [AnyObject]?) -> V
 
 public struct EartquakeService {
     
-    static func request(routerRequest: Router, completionHandler : @escaping CompletionHandler) {
+    static func request(routerRequest: Router, keyPath: String, completionHandler : @escaping CompletionHandler) {
    
         let queue = DispatchQueue(label: "com.Seismi.response-queue",
                                     qos: .utility,
                              attributes: [.concurrent])
         
-        Alamofire.request(routerRequest).validate().responseArray(queue: queue, keyPath: "earthquakes", context: nil,  completionHandler: { (response : DataResponse<[Eartquake]>) in
+    
+        Alamofire.request(routerRequest).validate().responseArray(queue: queue, keyPath: keyPath, context: nil,  completionHandler: { (response : DataResponse<[Eartquake]>) in
             
             guard response.result.isSuccess else {
                 
