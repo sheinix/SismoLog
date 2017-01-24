@@ -52,6 +52,7 @@ struct Fonts {
 struct NumberConstants {
     
     static let maxEarthquakes = 900
+    static let maxMinimumDepth : Float  = 650.0
     static let maxMinimumMagnitude : Float = 8.0
     static let tableSectionHeadersHeight : CGFloat = 60.0
     static let defaultMapMarkerCalloutViewSize : CGPoint = CGPoint(x: 0, y: 0)

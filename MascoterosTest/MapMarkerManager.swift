@@ -17,18 +17,22 @@ class MapMarkerManager {
         return sharedMapMarkerManager
         
     }
-
+    
+    fileprivate var markers = [GMSMarker]()
+    
     public func addMarkersFor(earthquakes: [Eartquake]?, to map: GMSMapView) {
         
         guard let earthquakesList = earthquakes else { return }
         
         map.clear()
+        markers.removeAll()
        
         guard earthquakesList.count > 0 else { return }
         
         for earthquake in earthquakesList {
             
-             _ = markerFor(earthQuake: earthquake, in: map)
+            let marker = markerFor(earthQuake: earthquake, in: map)
+            markers.append(marker)
            
         }
     }
@@ -74,5 +78,16 @@ class MapMarkerManager {
         marker.appearAnimation = kGMSMarkerAnimationPop
         
         return marker
+    }
+    
+    public func filterMapMarkersIn(mapView: GMSMapView, with depth: Float) -> Int {
+        
+        //Vuelvo a agregar al mapa si filtre anteriormente :
+        let _ = self.markers.filter { $0.map == nil }.map { $0.map = mapView }
+        
+        //Aplico filtro nuevo:
+        let filtered = self.markers.filter { Float(($0.userData as! Eartquake).depth!)! <= depth }.map { $0.map = nil }
+        
+        return self.markers.count - filtered.count
     }
 }

@@ -14,7 +14,8 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     var summaryView  = SummaryView(frame: CGRect.zero)
     var filterButton = UIButton(type: .custom)
-    var earthquakes : [Eartquake]?
+    var depthSlider = DepthSlider()
+    
     
     override func viewDidLoad() {
 
@@ -37,7 +38,10 @@ class MapViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if !NetworkManager.shared.connectionAvailable { showAlert() }
+        if !NetworkManager.shared.connectionAvailable {
+            self.showAlertWith(titleStr: "Error",
+                                    msg: "No hay conexion a la red. Conectece y pruebe nuevamente")
+        }
     }
     
     deinit {
@@ -53,9 +57,14 @@ class MapViewController: UIViewController {
         filterButton.layer.cornerRadius = 6
         filterButton.addTarget(self, action: #selector(showFilterView), for: .touchUpInside)
         
+        depthSlider.delegate = self
+        
         mapView.delegate = self
         mapView.addSubview(filterButton)
         mapView.addSubview(summaryView)
+        mapView.addSubview(depthSlider)
+        mapView.animate(toZoom: kGMSMinZoomLevel)
+
         
         //Set constraints:
         filterButton.snp.makeConstraints { (make) in
@@ -72,6 +81,12 @@ class MapViewController: UIViewController {
             make.height.equalTo(60)
         }
         
+        depthSlider.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(5)
+            make.bottom.equalToSuperview().offset(-5)
+            make.height.equalToSuperview().multipliedBy(0.4)
+            make.width.equalTo(50)
+        }
     }
     
     fileprivate func addObservers() {
@@ -98,17 +113,10 @@ class MapViewController: UIViewController {
         MapMarkerManager.shared.addMarkersFor(earthquakes: list, to: mapView)
         
         summaryView.setNew(count: list.count)
+        
+        depthSlider.depthSlider.setValue(1, animated: false)
     }
 
-    fileprivate func showAlert() {
-        
-        let alert = UIAlertController(title: "Error",
-                                    message: "No hay conexion a la red. Conectece y pruebe nuevamente",preferredStyle:.alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in }
-        alert.addAction(okAction)
-        
-        self.present(alert, animated: true, completion:nil)
-    }
 }
 
 extension MapViewController : FilterProtocolDelegate {
@@ -116,6 +124,16 @@ extension MapViewController : FilterProtocolDelegate {
     func didApply(completion: () -> Void) {
         
         completion()
+    }
+}
+
+extension MapViewController : sliderProtocolDelegate {
+    
+    func sliderDidEndSlidingWith(value: Float) {
+        
+        let newCount = MapMarkerManager.shared.filterMapMarkersIn(mapView: self.mapView, with: value)
+        summaryView.setNew(count: newCount)
+        
     }
 }
 

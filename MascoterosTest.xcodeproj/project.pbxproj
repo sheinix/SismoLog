@@ -14,7 +14,9 @@
 		26213FFD1E29AC07007352E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26213FFB1E29AC07007352E3 /* LaunchScreen.storyboard */; };
 		262140071E29AF01007352E3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262140061E29AF01007352E3 /* NetworkManager.swift */; };
 		2621400A1E29AF7A007352E3 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262140091E29AF7A007352E3 /* NetworkProtocol.swift */; };
+		2648BB101E370CFA00E4D53F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648BB0F1E370CFA00E4D53F /* UIViewControllerExtension.swift */; };
 		265154DC1E308E6400E7B940 /* EnumCollectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265154DB1E308E6400E7B940 /* EnumCollectionProtocol.swift */; };
+		265154DE1E36EA5400E7B940 /* DepthSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265154DD1E36EA5400E7B940 /* DepthSlider.swift */; };
 		267BE7991E2DEEC40097EF50 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267BE7981E2DEEC40097EF50 /* SummaryView.swift */; };
 		269487771E29BA270047BC75 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487761E29BA270047BC75 /* Constants.swift */; };
 		2694877A1E29BB180047BC75 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487791E29BB180047BC75 /* MapViewController.swift */; };
@@ -46,7 +48,9 @@
 		26213FFE1E29AC07007352E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		262140061E29AF01007352E3 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		262140091E29AF7A007352E3 /* NetworkProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
+		2648BB0F1E370CFA00E4D53F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		265154DB1E308E6400E7B940 /* EnumCollectionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumCollectionProtocol.swift; sourceTree = "<group>"; };
+		265154DD1E36EA5400E7B940 /* DepthSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepthSlider.swift; sourceTree = "<group>"; };
 		267BE7981E2DEEC40097EF50 /* SummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		269487731E29B9B40047BC75 /* MascoterosTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MascoterosTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		269487761E29BA270047BC75 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 				269487791E29BB180047BC75 /* MapViewController.swift */,
 				2694877B1E29C47E0047BC75 /* FilterTableViewController.swift */,
 				2694878E1E2AF03C0047BC75 /* FilterViewDataSource.swift */,
+				2648BB0F1E370CFA00E4D53F /* UIViewControllerExtension.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				269487A61E2CAC210047BC75 /* CustomInfoWindow.swift */,
 				269487AA1E2D7DD00047BC75 /* InfoWindow.xib */,
 				267BE7981E2DEEC40097EF50 /* SummaryView.swift */,
+				265154DD1E36EA5400E7B940 /* DepthSlider.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -338,6 +344,7 @@
 			files = (
 				269487921E2AFA2D0047BC75 /* TableHeaderView.swift in Sources */,
 				269487941E2AFA570047BC75 /* FiltersTableViewCell.swift in Sources */,
+				2648BB101E370CFA00E4D53F /* UIViewControllerExtension.swift in Sources */,
 				269487771E29BA270047BC75 /* Constants.swift in Sources */,
 				269487A11E2C51A30047BC75 /* EarthquakeSeverity.swift in Sources */,
 				2694877C1E29C47E0047BC75 /* FilterTableViewController.swift in Sources */,
@@ -356,6 +363,7 @@
 				265154DC1E308E6400E7B940 /* EnumCollectionProtocol.swift in Sources */,
 				2621400A1E29AF7A007352E3 /* NetworkProtocol.swift in Sources */,
 				262140071E29AF01007352E3 /* NetworkManager.swift in Sources */,
+				265154DE1E36EA5400E7B940 /* DepthSlider.swift in Sources */,
 				26213FF31E29AC07007352E3 /* AppDelegate.swift in Sources */,
 				2694879F1E2C43A90047BC75 /* MapMarkerManager.swift in Sources */,
 				267BE7991E2DEEC40097EF50 /* SummaryView.swift in Sources */,

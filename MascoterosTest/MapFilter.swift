@@ -15,7 +15,7 @@ struct MapFilter {
     var numberOfEarthquakes : String?
     var year : String?
     var month : String?
-    
+    var minDepth : String?
     var requestForApi : Router {
         
         get {

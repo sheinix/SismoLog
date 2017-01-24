@@ -127,7 +127,14 @@ extension FilterTableViewController : FilterCellProtcolDelegate {
     
     func didPressApplyButton() {
         
-        NetworkManager.shared.getEarthquakes()//With(filter: filter)
+        if ((NetworkManager.shared.filterData.month != nil) && NetworkManager.shared.filterData.year == nil) {
+            self.showAlertWith(titleStr: "Error",
+                                    msg: "Debe seleccionar un ano para el mes indicado")
+            return 
+        }
+        
+        
+        NetworkManager.shared.getEarthquakes()
         
         self.filterDelegate?.didApply(completion: {
             
