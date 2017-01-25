@@ -22,6 +22,7 @@
 		265683A21E382116006FF172 /* Years.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265683A11E382116006FF172 /* Years.swift */; };
 		265683A41E38214B006FF172 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265683A31E38214B006FF172 /* Utilities.swift */; };
 		265683B31E3830E5006FF172 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 265683B51E3830E5006FF172 /* Localizable.strings */; };
+		265683C81E383CAC006FF172 /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265683CA1E383CAC006FF172 /* InfoWindow.xib */; };
 		267BE7991E2DEEC40097EF50 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267BE7981E2DEEC40097EF50 /* SummaryView.swift */; };
 		269487771E29BA270047BC75 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487761E29BA270047BC75 /* Constants.swift */; };
 		2694877A1E29BB180047BC75 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487791E29BB180047BC75 /* MapViewController.swift */; };
@@ -40,7 +41,6 @@
 		269487A31E2C83CF0047BC75 /* TableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487A21E2C83CF0047BC75 /* TableSectionHeaderView.swift */; };
 		269487A51E2C85E60047BC75 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487A41E2C85E60047BC75 /* HeaderView.swift */; };
 		269487A71E2CAC210047BC75 /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487A61E2CAC210047BC75 /* CustomInfoWindow.swift */; };
-		269487AB1E2D7DD00047BC75 /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269487AA1E2D7DD00047BC75 /* InfoWindow.xib */; };
 		D33634A5DA4FD7FAA82402C3 /* Pods_MascoterosTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D328996215E0B5ECA8B794B7 /* Pods_MascoterosTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +64,9 @@
 		265683AF1E3830A7006FF172 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		265683B61E3830F7006FF172 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		265683B71E383119006FF172 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		265683CF1E383E66006FF172 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InfoWindow.xib; sourceTree = "<group>"; };
+		265683D01E383E7B006FF172 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoWindow.strings; sourceTree = "<group>"; };
+		265683D21E383E8A006FF172 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoWindow.strings; sourceTree = "<group>"; };
 		267BE7981E2DEEC40097EF50 /* SummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		269487731E29B9B40047BC75 /* MascoterosTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MascoterosTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		269487761E29BA270047BC75 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -83,7 +86,6 @@
 		269487A21E2C83CF0047BC75 /* TableSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderView.swift; sourceTree = "<group>"; };
 		269487A41E2C85E60047BC75 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		269487A61E2CAC210047BC75 /* CustomInfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInfoWindow.swift; sourceTree = "<group>"; };
-		269487AA1E2D7DD00047BC75 /* InfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoWindow.xib; sourceTree = "<group>"; };
 		47634C8D0D42BA920D31A2E3 /* Pods-MascoterosTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MascoterosTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-MascoterosTest/Pods-MascoterosTest.release.xcconfig"; sourceTree = "<group>"; };
 		C0C2599F0F17F620AF3F3469 /* Pods-MascoterosTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MascoterosTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MascoterosTest/Pods-MascoterosTest.debug.xcconfig"; sourceTree = "<group>"; };
 		D328996215E0B5ECA8B794B7 /* Pods_MascoterosTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MascoterosTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,7 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				269487A61E2CAC210047BC75 /* CustomInfoWindow.swift */,
-				269487AA1E2D7DD00047BC75 /* InfoWindow.xib */,
+				265683CA1E383CAC006FF172 /* InfoWindow.xib */,
 			);
 			name = MarkerCalloutView;
 			sourceTree = "<group>";
@@ -323,7 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				269487AB1E2D7DD00047BC75 /* InfoWindow.xib in Resources */,
+				265683C81E383CAC006FF172 /* InfoWindow.xib in Resources */,
 				265683B31E3830E5006FF172 /* Localizable.strings in Resources */,
 				26213FFD1E29AC07007352E3 /* LaunchScreen.storyboard in Resources */,
 				26213FFA1E29AC07007352E3 /* Assets.xcassets in Resources */,
@@ -446,6 +448,16 @@
 				265683B71E383119006FF172 /* en */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		265683CA1E383CAC006FF172 /* InfoWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				265683CF1E383E66006FF172 /* Base */,
+				265683D01E383E7B006FF172 /* en */,
+				265683D21E383E8A006FF172 /* es */,
+			);
+			name = InfoWindow.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
