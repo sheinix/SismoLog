@@ -19,11 +19,11 @@ enum TableSections : Int {
     public var title : String! {
         switch self {
         case .Magnitude:
-            return "Magnitud Minima"
+            return NSLocalizedString("MIN_MAGNITUDE", comment:"")
         case .NumberOfEartquakes:
-            return "Cantidad a visualizar"
+            return NSLocalizedString("QTTY", comment:"")
         case .PickerFilter:
-            return "Mes / Año"
+            return NSLocalizedString("MONTH_YEAR", comment:"")
         case .Buttons:
             return ""
         default:
@@ -108,7 +108,7 @@ enum TableSections : Int {
         button.backgroundColor = Colors.mainColor
         button.layer.cornerRadius = 9
         button.setTitleColor(UIColor.white, for: .normal)
-        button.setTitle("Aplicar", for: .normal)
+        button.setTitle(NSLocalizedString("APPLY", comment: "") , for: .normal)
         
         return button
     }

@@ -25,7 +25,7 @@ class TableHeaderView: HeaderView {
         self.backgroundColor = Colors.mainColor
         self.titleLabel.textColor = .white
         self.titleLabel.font = Fonts.mainFontBig
-        self.titleLabel.text = "Filtrar Terremotos"
+        self.titleLabel.text = NSLocalizedString("FILTER_EARTHQUAKES", comment: "")
         
         
         addSubview(closeButton)

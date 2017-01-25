@@ -39,8 +39,8 @@ class MapViewController: UIViewController {
         super.viewWillAppear(animated)
         
         if !NetworkManager.shared.connectionAvailable {
-            self.showAlertWith(titleStr: "Error",
-                                    msg: "No hay conexion a la red. Conectece y pruebe nuevamente")
+            self.showAlertWith(titleStr: NSLocalizedString("ERROR", comment: ""),
+                                    msg: NSLocalizedString("NETWORK_ERROR", comment: ""))
         }
     }
     

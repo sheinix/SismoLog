@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  MascoterosTest
+
+  Created by Sarah Cleland on 25/01/17.
+  Copyright © 2017 Mascoteros. All rights reserved.
+*/
+"ERROR" = "Error";
+"NETWORK_ERROR" =  "No hay conexion a la red. Conectece y pruebe nuevamente";
+"SELECT_YEAR" = "Debe seleccionar un ano para el mes indicado";
+"MIN_MAGNITUDE" = "Magnitud Minima";
+"QTTY" = "Cantidad a visualizar";
+"MONTH_YEAR" = "Mes / Año";
+"APPLY" = "Aplicar";
+"JAN" = "Enero";
+"FEB" = "Febrero";
+"MAR" = "Marzo";
+"APR" = "Abril";
+"MAY" = "Mayo";
+"JUN" = "Junio";
+"JUL" = "Julio";
+"AGO" = "Agosto";
+"SEP" = "Septiembre";
+"OCT" = "Octubre";
+"NOV" = "Noviembre";
+"DEC" = "Diciembre";
+"REGION" = "Region";
+"MAGNITUDE" = "Magnitud";
+"DEPTH" = "Profundidad";
+"DATE" = "Fecha";
+"FILTER_EARTHQUAKES" = "Filtrar Terremotos";
+"TOTAL_EARTQUAKES" = "Total de Terremotos";
+"DATE : " = "Fecha : ";
+"MIN_DEPTH: " = "Profudidad Minima : ";
+"RECENT" = "Recientes";

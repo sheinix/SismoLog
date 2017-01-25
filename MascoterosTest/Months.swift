@@ -22,29 +22,29 @@ enum Months : Int , EnumCollection {
     var name : String! {
         switch self {
         case .January:
-            return "Enero"
+            return  NSLocalizedString("JAN", comment: "")
         case .February:
-            return "Febrero"
+            return NSLocalizedString("FEB", comment: "")
         case .March:
-            return "Marzo"
+            return NSLocalizedString("MAR", comment: "")
         case .April:
-            return "Abril"
+            return NSLocalizedString("APR", comment: "")
         case .May:
-            return "Mayo"
+            return NSLocalizedString("MAY", comment: "")
         case .June:
-            return "Junio"
+            return NSLocalizedString("JUN", comment: "")
         case .July:
-            return "Julio"
+            return NSLocalizedString("JUL", comment: "")
         case .August:
-            return "Agosto"
+            return NSLocalizedString("AGO", comment: "")
         case .September:
-            return "Septiembre"
+            return NSLocalizedString("SEP", comment: "")
         case .October:
-            return "Octubre"
+            return NSLocalizedString("OCT", comment: "")
         case .November:
-            return "Noviembre"
+            return NSLocalizedString("NOV", comment: "")
         case .December:
-            return "Diciembre"
+            return NSLocalizedString("DEC", comment: "")
         default:
             return ""
         }
@@ -54,18 +54,18 @@ enum Months : Int , EnumCollection {
     static func getMonthFrom(string: String) -> Months? {
         
         switch string {
-        case "Enero": return Months.January
-        case "Febrero": return Months.February
-        case "Marzo": return Months.March
-        case "Abril": return Months.April
-        case "Mayo": return Months.May
-        case "Junio": return Months.June
-        case "Julio": return Months.July
-        case "Agosto": return Months.August
-        case "Septiembre": return Months.September
-        case "Octubre"   : return Months.October
-        case "Noviembre": return Months.November
-        case "Diciembre": return Months.December
+        case NSLocalizedString("JAN", comment: "") : return Months.January
+        case NSLocalizedString("FEB", comment: "") : return Months.February
+        case NSLocalizedString("MAR", comment: "") : return Months.March
+        case NSLocalizedString("APR", comment: "") : return Months.April
+        case NSLocalizedString("MAY", comment: "") : return Months.May
+        case NSLocalizedString("JUN", comment: "") : return Months.June
+        case NSLocalizedString("JUL", comment: "") : return Months.July
+        case NSLocalizedString("AGO", comment: "") : return Months.August
+        case NSLocalizedString("SEP", comment: "") : return Months.September
+        case NSLocalizedString("OCT", comment: "") : return Months.October
+        case NSLocalizedString("NOV", comment: "") : return Months.November
+        case NSLocalizedString("DEC", comment: "") : return Months.December
             
         default:
             break

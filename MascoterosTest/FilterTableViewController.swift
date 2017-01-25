@@ -128,8 +128,8 @@ extension FilterTableViewController : FilterCellProtcolDelegate {
     func didPressApplyButton() {
         
         if ((NetworkManager.shared.filterData.month != nil) && NetworkManager.shared.filterData.year == nil) {
-            self.showAlertWith(titleStr: "Error",
-                                    msg: "Debe seleccionar un ano para el mes indicado")
+            self.showAlertWith(titleStr: NSLocalizedString("ERROR",comment: ""),
+                                    msg: NSLocalizedString("SELECT_YEAR",comment: ""))
             return 
         }
         

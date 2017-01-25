@@ -37,7 +37,7 @@ struct MapFilter {
         if let year = self.year, let month = self.month {
             return (Months(rawValue: Int(month)!)?.name)! + " " + year
         }
-        return (self.year != nil ? self.year! : "Recientes")
+        return (self.year != nil ? self.year! : NSLocalizedString("RECENT", comment : ""))
     }
         
     init() {

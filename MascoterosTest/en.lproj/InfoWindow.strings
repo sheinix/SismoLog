@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4cI-p6-8qU"; */
+"4cI-p6-8qU.text" = "Label";
+
+/* Class = "UILabel"; text = "Region :"; ObjectID = "An2-iP-qQ0"; */
+"An2-iP-qQ0.text" = "Region :";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Nvs-0W-cld"; */
+"Nvs-0W-cld.text" = "Label";
+
+/* Class = "UILabel"; text = "Fecha :"; ObjectID = "TZk-eV-zYJ"; */
+"TZk-eV-zYJ.text" = "Date :";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "TgB-wS-Z9N"; */
+"TgB-wS-Z9N.text" = "Label";
+
+/* Class = "UILabel"; text = "Magnitud :"; ObjectID = "ZnJ-r7-591"; */
+"ZnJ-r7-591.text" = "Magnitude :";
+
+/* Class = "UILabel"; text = "Profundidad :"; ObjectID = "bWO-3L-gJV"; */
+"bWO-3L-gJV.text" = "Depth :";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fAH-nw-TxG"; */
+"fAH-nw-TxG.text" = "Label";

@@ -11,13 +11,14 @@ import SnapKit
 
 class SummaryView: UIView {
 
-    var totalCountLabel  = SummaryViewLabel(font: Fonts.mainFontSmall, txt: "Total de Terremotos")
+    var totalCountLabel  = SummaryViewLabel(font: Fonts.mainFontSmall, txt: NSLocalizedString("TOTAL_EARTQUAKES", comment: ""))
+    
     var totalCountValue  = SummaryViewLabel(font: Fonts.mainFontSmall, txt: "")
     
-    var dateLabel        = SummaryViewLabel(font: Fonts.mainFontSmall, txt: "Fecha : ")
+    var dateLabel        = SummaryViewLabel(font: Fonts.mainFontSmall, txt: NSLocalizedString("DATE : ", comment: ""))
     var dateLabelValue   = SummaryViewLabel(font: UIFont.systemFont(ofSize: 10), txt: "")
     
-    var depthLabel      = SummaryViewLabel(font: UIFont.systemFont(ofSize: 10), txt: "Profudidad Minima : ")
+    var depthLabel      = SummaryViewLabel(font: UIFont.systemFont(ofSize: 10), txt:NSLocalizedString("MIN_DEPTH: ", comment: ""))
     var depthLabelValue = SummaryViewLabel(font: UIFont.systemFont(ofSize: 10), txt: "1")
     
     override init(frame: CGRect) {
