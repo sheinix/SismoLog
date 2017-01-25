@@ -18,6 +18,9 @@
 		2648BB191E380CD900E4D53F /* SummaryViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648BB181E380CD900E4D53F /* SummaryViewLabel.swift */; };
 		265154DC1E308E6400E7B940 /* EnumCollectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265154DB1E308E6400E7B940 /* EnumCollectionProtocol.swift */; };
 		265154DE1E36EA5400E7B940 /* DepthSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265154DD1E36EA5400E7B940 /* DepthSlider.swift */; };
+		265683A01E3820F0006FF172 /* Months.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2656839F1E3820F0006FF172 /* Months.swift */; };
+		265683A21E382116006FF172 /* Years.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265683A11E382116006FF172 /* Years.swift */; };
+		265683A41E38214B006FF172 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265683A31E38214B006FF172 /* Utilities.swift */; };
 		267BE7991E2DEEC40097EF50 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267BE7981E2DEEC40097EF50 /* SummaryView.swift */; };
 		269487771E29BA270047BC75 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487761E29BA270047BC75 /* Constants.swift */; };
 		2694877A1E29BB180047BC75 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269487791E29BB180047BC75 /* MapViewController.swift */; };
@@ -53,6 +56,9 @@
 		2648BB181E380CD900E4D53F /* SummaryViewLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewLabel.swift; sourceTree = "<group>"; };
 		265154DB1E308E6400E7B940 /* EnumCollectionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumCollectionProtocol.swift; sourceTree = "<group>"; };
 		265154DD1E36EA5400E7B940 /* DepthSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepthSlider.swift; sourceTree = "<group>"; };
+		2656839F1E3820F0006FF172 /* Months.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Months.swift; sourceTree = "<group>"; };
+		265683A11E382116006FF172 /* Years.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Years.swift; sourceTree = "<group>"; };
+		265683A31E38214B006FF172 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		267BE7981E2DEEC40097EF50 /* SummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		269487731E29B9B40047BC75 /* MascoterosTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MascoterosTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		269487761E29BA270047BC75 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -127,7 +133,7 @@
 				262140051E29AEEB007352E3 /* Managers */,
 				262140041E29AECE007352E3 /* Model */,
 				269487901E2AFA0E0047BC75 /* Views */,
-				269487781E29BA2E0047BC75 /* Constants & Macros */,
+				269487781E29BA2E0047BC75 /* Constants & Functions */,
 				26213FF61E29AC07007352E3 /* Main.storyboard */,
 				26213FF91E29AC07007352E3 /* Assets.xcassets */,
 				26213FFB1E29AC07007352E3 /* LaunchScreen.storyboard */,
@@ -143,6 +149,8 @@
 				2694877D1E29C4F20047BC75 /* MapFilter.swift */,
 				269487821E29CFE10047BC75 /* Earthquake.swift */,
 				269487A01E2C51A30047BC75 /* EarthquakeSeverity.swift */,
+				2656839F1E3820F0006FF172 /* Months.swift */,
+				265683A11E382116006FF172 /* Years.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -165,6 +173,34 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
+		265683A51E38217C006FF172 /* HeaderViews */ = {
+			isa = PBXGroup;
+			children = (
+				269487A41E2C85E60047BC75 /* HeaderView.swift */,
+				269487A21E2C83CF0047BC75 /* TableSectionHeaderView.swift */,
+				269487911E2AFA2D0047BC75 /* TableHeaderView.swift */,
+			);
+			name = HeaderViews;
+			sourceTree = "<group>";
+		};
+		265683A61E382192006FF172 /* MarkerCalloutView */ = {
+			isa = PBXGroup;
+			children = (
+				269487A61E2CAC210047BC75 /* CustomInfoWindow.swift */,
+				269487AA1E2D7DD00047BC75 /* InfoWindow.xib */,
+			);
+			name = MarkerCalloutView;
+			sourceTree = "<group>";
+		};
+		265683A71E3821B9006FF172 /* SummaryView */ = {
+			isa = PBXGroup;
+			children = (
+				2648BB181E380CD900E4D53F /* SummaryViewLabel.swift */,
+				267BE7981E2DEEC40097EF50 /* SummaryView.swift */,
+			);
+			name = SummaryView;
+			sourceTree = "<group>";
+		};
 		269487721E29B7180047BC75 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,12 +212,13 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		269487781E29BA2E0047BC75 /* Constants & Macros */ = {
+		269487781E29BA2E0047BC75 /* Constants & Functions */ = {
 			isa = PBXGroup;
 			children = (
 				269487761E29BA270047BC75 /* Constants.swift */,
+				265683A31E38214B006FF172 /* Utilities.swift */,
 			);
-			name = "Constants & Macros";
+			name = "Constants & Functions";
 			sourceTree = "<group>";
 		};
 		269487881E29E8910047BC75 /* Networking */ = {
@@ -197,16 +234,12 @@
 		269487901E2AFA0E0047BC75 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				265683A61E382192006FF172 /* MarkerCalloutView */,
+				265683A51E38217C006FF172 /* HeaderViews */,
+				265683A71E3821B9006FF172 /* SummaryView */,
 				269487971E2B12CE0047BC75 /* PickerSource.swift */,
-				269487A41E2C85E60047BC75 /* HeaderView.swift */,
-				269487A21E2C83CF0047BC75 /* TableSectionHeaderView.swift */,
-				269487911E2AFA2D0047BC75 /* TableHeaderView.swift */,
 				269487931E2AFA570047BC75 /* FiltersTableViewCell.swift */,
-				269487A61E2CAC210047BC75 /* CustomInfoWindow.swift */,
-				269487AA1E2D7DD00047BC75 /* InfoWindow.xib */,
 				265154DD1E36EA5400E7B940 /* DepthSlider.swift */,
-				267BE7981E2DEEC40097EF50 /* SummaryView.swift */,
-				2648BB181E380CD900E4D53F /* SummaryViewLabel.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -358,14 +391,17 @@
 				2694878A1E29E8B30047BC75 /* Router.swift in Sources */,
 				269487A71E2CAC210047BC75 /* CustomInfoWindow.swift in Sources */,
 				269487871E29D35D0047BC75 /* EartquakeService.swift in Sources */,
+				265683A41E38214B006FF172 /* Utilities.swift in Sources */,
 				2694878F1E2AF03C0047BC75 /* FilterViewDataSource.swift in Sources */,
 				261E85C11E307FC900B4CA88 /* (null) in Sources */,
 				2694877E1E29C4F20047BC75 /* MapFilter.swift in Sources */,
+				265683A01E3820F0006FF172 /* Months.swift in Sources */,
 				269487831E29CFE10047BC75 /* Earthquake.swift in Sources */,
 				269487981E2B12CE0047BC75 /* PickerSource.swift in Sources */,
 				269487A51E2C85E60047BC75 /* HeaderView.swift in Sources */,
 				265154DC1E308E6400E7B940 /* EnumCollectionProtocol.swift in Sources */,
 				2621400A1E29AF7A007352E3 /* NetworkProtocol.swift in Sources */,
+				265683A21E382116006FF172 /* Years.swift in Sources */,
 				262140071E29AF01007352E3 /* NetworkManager.swift in Sources */,
 				265154DE1E36EA5400E7B940 /* DepthSlider.swift in Sources */,
 				26213FF31E29AC07007352E3 /* AppDelegate.swift in Sources */,

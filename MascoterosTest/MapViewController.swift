@@ -136,7 +136,6 @@ extension MapViewController : sliderProtocolDelegate {
         
         let newCount = MapMarkerManager.shared.filterMapMarkersIn(mapView: self.mapView, with: value)
         NetworkManager.shared.filterData.minDepth = String(format: "%.2f", value)
-        //summaryView.depthLabelValue.text = String(format: "%.2f", value)
         summaryView.setNew(count: newCount, resetDepth: false)
         
     }
